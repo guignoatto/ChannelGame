@@ -9,6 +9,7 @@ public class ProjectileBase : MonoBehaviour
 {
     
     [SerializeField] private float _rotationSpeed;
+    [SerializeField] private bool _multiTarget = false;
     private float _projectileSpeed;
     private float _projectileDuration;
     private float _damage;
@@ -43,8 +44,9 @@ public class ProjectileBase : MonoBehaviour
     {
         if (other2D.gameObject.TryGetComponent(out EnemyBase enemy))
         {
-            enemy.TakeDamage(_damage);
-            Destroy(gameObject);
+            enemy.TakeDamage(_damage, this);
+            if (!_multiTarget)
+                Destroy(gameObject);
         }
     }
 
