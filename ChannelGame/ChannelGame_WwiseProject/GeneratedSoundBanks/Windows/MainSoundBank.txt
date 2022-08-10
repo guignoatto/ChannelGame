@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1598016745	Play_XP_PickUp			\Default Work Unit\Play_XP_PickUp	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	306663159	XP_PickUp	C:\Users\Rafael\ChannelGame\ChannelGame\ChannelGame_WwiseProject\.cache\Windows\SFX\77245__studiocopsey__power-up_B4199003.wem		\Actor-Mixer Hierarchy\Default Work Unit\XP_PickUp		12922
+

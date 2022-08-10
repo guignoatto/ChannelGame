@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{2DDED858-1B63-41B8-80D9-8DE02DAE87A4}" SchemaVersion="110">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{2DDED858-1B63-41B8-80D9-8DE02DAE87A4}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_XP_PickUp" ID="{93EC977A-3FFE-4B90-9916-A012EE59B374}">
+					<ChildrenList>
+						<Action Name="" ID="{DCF24C48-C044-41A3-B3C9-388E61B73BC6}" ShortID="719240041">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="XP_PickUp" ID="{63846322-DC54-4AC4-ABB2-F0FC86438964}" WorkUnitID="{54E29680-853C-46B4-AAB7-78E8FFB87F64}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo>
+	<Project Name="ChannelGame_WwiseProject" GUID="{288F7CF8-B517-4AB9-81E9-140D0BA3CF0A}" Generator="2022.1.0.7985"/>
+	<CacheRoot>../../../../ChannelGame_WwiseProject/.cache</CacheRoot>
+	<Platforms>
+		<Platform Name="Mac" GUID="{46A088AA-25AB-4CB0-B3E1-D6CA1280A2D7}" BasePlatform="Mac" BasePlatformGUID="{9C6217D5-DD11-4795-87C1-6CE02853C540}" Path="../../../../ChannelGame_WwiseProject/GeneratedSoundBanks/Mac"/>
+		<Platform Name="Windows" GUID="{E43F29D6-B03D-4172-95D6-170F933BE530}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="../../../../ChannelGame_WwiseProject/GeneratedSoundBanks/Windows"/>
+	</Platforms>
+	<Languages>
+		<Language Name="English(US)" Id="684519430" GUID="{4F1AA755-B03F-4F63-98D1-A7C7FF8F9D8E}" Default="true" UseAsStandIn="true"/>
+	</Languages>
+	<FileHash>{75E3A91A-EADD-448C-9EDB-0E2B7AE1ADB0}</FileHash>
+</ProjectInfo>

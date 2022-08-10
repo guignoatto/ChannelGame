@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="144">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{6415AAD9-D73F-8EA3-A9CC-F275A7EF452E}">
+			<ShortName>MainSoundBank</ShortName>
+			<Path>MainSoundBank.bnk</Path>
+			<Media>
+				<File Id="306663159" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>77245__studiocopsey__power-up.wav</ShortName>
+					<CachePath>SFX/77245__studiocopsey__power-up_B4199003.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1598016745" Name="Play_XP_PickUp" DurationType="OneShot" DurationMin="0.14542484" DurationMax="0.14542484">
+					<MediaRefs>
+						<MediaRef Id="306663159"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{27583624-5B8E-2CDA-D317-E9F7A02C7AF9}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{C05E3CE1-CF99-F9E6-83EF-CB2C9A10B7F7}</FileHash>
+</SoundBanksInfo>
