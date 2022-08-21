@@ -7,46 +7,57 @@ using UnityEngine.Timeline;
 
 public class SkillBase : MonoBehaviour
 {
-    [SerializeField] private List<EnemyBase> _enemyListTest;
+    public SkillPreset _skillPreset;
+    
+    [SerializeField] protected List<EnemyBase> _enemyListTest;
+    [Header("SkillAttributes")]
     [SerializeField] protected float _damage;
-    [Range(1f,15f)]
-    [SerializeField] protected float _skillCooldown;
-    [SerializeField] private float _skillDuration;
-    [SerializeField] private float _projectileSpeed;
-    [SerializeField] protected GameObject _projectile;
+    [SerializeField] protected float _cooldown;
+    [SerializeField] protected float _projectileSpeed;
+    [SerializeField] protected float _projectileDuration;
 
+    protected Transform projectileParenTransform = null;
     private SkillSound _skillSound;
     private float timer;
 
     private void Start()
     {
+        if (projectileParenTransform is null)
+            projectileParenTransform = transform;
+
         timer = 0;
         _skillSound = GetComponent<SkillSound>();
         _enemyListTest = FindObjectsOfType<EnemyBase>().ToList();
+        _damage = _skillPreset.Damage;
+        _cooldown = _skillPreset.Cooldown;
+        _projectileSpeed = _skillPreset.ProjectileSpeed;
+        _projectileDuration = _skillPreset.ProjectileDuration;
+        Attack();
     }
-    private void Update()
+    protected virtual void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= _skillCooldown / Math.Pow(_skillCooldown, 2))
+        if (timer >= _cooldown / Math.Pow(_cooldown, 2))
         {
             timer = 0;
             Attack();
         }
     }
 
-    protected virtual void Attack()
+    protected virtual ProjectileBase Attack()
     {
         var nearestEnemy = GetClosestEnemy(_enemyListTest);
         if (nearestEnemy == null)
-            return;
-        ProjectileBase pb = Instantiate(_projectile, transform).GetComponent<ProjectileBase>();
+            return null;
+        ProjectileBase pb = Instantiate(_skillPreset.SkillProjectile, transform).GetComponent<ProjectileBase>();
         pb.NearestEnemy = nearestEnemy;
-        pb.ProjectileDuration = _skillDuration;
+        pb.ProjectileDuration = _projectileDuration;
         pb.ProjectileSpeed = _projectileSpeed;
         pb.Damage = _damage;
-        _skillSound.PlaySoundEffect(_skillSound.SkillAudioClip,1,2f);
+        pb.Initialize(projectileParenTransform);
+        return pb;
     }
-    Transform GetClosestEnemy(List<EnemyBase> enemies)
+    protected Transform GetClosestEnemy(List<EnemyBase> enemies)
     {
         Transform tMin = null;
         float minDist = Mathf.Infinity;
@@ -62,4 +73,9 @@ public class SkillBase : MonoBehaviour
         }
         return tMin;
     }
+    
+    public float Damage { get => _damage; set => _damage = value; }
+    public float ProjectileDuration { get => _projectileDuration; set => _projectileDuration = value; }
+    public float ProjectileSpeed { get => _projectileSpeed; set => _projectileSpeed = value; }
+    public float Cooldown { get => _cooldown; set => _cooldown = value; }
 }

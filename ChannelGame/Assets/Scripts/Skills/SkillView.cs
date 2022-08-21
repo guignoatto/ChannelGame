@@ -7,29 +7,31 @@ using UnityEngine.UIElements;
 public class SkillView : MonoBehaviour
 {
     [SerializeField] private GameObject _skillPickCanvas;
+    [SerializeField] private List<ButtonSkill> _buttonSkillsList;
 
-    [SerializeField] private Button _buttonSkill1;
-    [SerializeField] private Button _buttonSkill2;
-    [SerializeField] private Button _buttonSkill3;
-    
     public Action<ISkillType> SkillClickedEvent; 
     
-    public void GetSkillClicked(ISkillType skillType)
+    public void GetSkillClicked(ButtonSkill skillType)
     {
-        SkillClickedEvent?.Invoke(skillType);
+        SkillClickedEvent?.Invoke(skillType.SkillType);
+        _skillPickCanvas.SetActive(false);
+        Time.timeScale = 1;
     }
 
-    public void OnLevelUpHandler(List<ISkillType> skillTypes)
+    public void OnLevelUpHandler(List<SkillPreset> skillPresets)
     {
         _skillPickCanvas.SetActive(true);
-        GetSkillForButtons(skillTypes);
+        Time.timeScale = 0;
+        GetSkillForButtons(skillPresets);
     }
 
-    public void GetSkillForButtons(List<ISkillType> skillType)
+    public void GetSkillForButtons(List<SkillPreset> skillPresets)
     {
-        foreach (var type in skillType)
+        for (int i = 0; i < skillPresets.Count; i++)
         {
-            ChangeButton(type);
+            //todo change button view
+            _buttonSkillsList[i].SkillType = skillPresets[i].SkillType;
+            _buttonSkillsList[i].SkillText.text = skillPresets[i].SkillName;
         }
     }
 
@@ -37,12 +39,8 @@ public class SkillView : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
+            Time.timeScale = 1;
             _skillPickCanvas.SetActive(false);
         }
-    }
-
-    private void ChangeButton(ISkillType skillType)
-    {
-        //change buttons style + add ISkillType
     }
 }

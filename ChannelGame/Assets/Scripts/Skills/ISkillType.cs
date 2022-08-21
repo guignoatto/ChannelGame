@@ -4,5 +4,9 @@ using UnityEngine;
 
 public enum ISkillType 
 {
-    LIGHTSABER
+    NONE,
+    LIGHTSABER,
+    MACHINEGUN,
+    SWORD,
+    ORBITAL
 }

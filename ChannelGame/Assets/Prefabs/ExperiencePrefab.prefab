@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exPoints: 2
-  _speed: 8
+  _speed: 10
 --- !u!95 &6017895135755235021
 Animator:
   serializedVersion: 3

@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class GameEvents : MonoBehaviour
 {
-    [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] private PlayerController _playerController;
     [SerializeField] private SkillPickManager _skillPickManager;
 
     private void Start()
     {
         _skillPickManager.Initialize();
-        
-        _playerMovement.LevelUpEvent += OnLevelUpHandler;
+        _playerController.Initialize();
+
+        _playerController.LevelUpEvent += OnLevelUpHandler;
     }
 
     private void OnLevelUpHandler()

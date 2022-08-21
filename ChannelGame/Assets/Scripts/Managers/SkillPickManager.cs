@@ -1,14 +1,15 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SkillPickManager : MonoBehaviour
 {
-    [SerializeField] private SkillsPrefabs _skillsPrefabs;
+    [SerializeField] private SkillsList skillsList;
     [SerializeField] private PlayerMovement _player;
 
     private SkillView _skillView;
-    
+
     public void OnLevelUpHandler()
     {
         _skillView.OnLevelUpHandler(RandomizeSkills());
@@ -19,26 +20,35 @@ public class SkillPickManager : MonoBehaviour
         _skillView = GetComponent<SkillView>();
         _skillView.SkillClickedEvent += InstantiateNewSkill;
     }
+
     private void InstantiateNewSkill(ISkillType skillType)
     {
-        var skill = GetSkillType(skillType);
-        Instantiate(skill, _player.transform);
+        var skillPreset = GetSkillType(skillType);
+        var skill = Instantiate(skillPreset.SkillPrefab, _player.transform).GetComponent<SkillBase>();
+        skill._skillPreset = skillPreset;
     }
 
-    private GameObject GetSkillType(ISkillType skillType)
+    private SkillPreset GetSkillType(ISkillType skillType)
     {
-        switch (skillType)
+        foreach (var skill in skillsList.Skills)
         {
-            case ISkillType.LIGHTSABER:
-                return _skillsPrefabs.LightSaber;
-            default:
-                return null;
+            if (skill.SkillType == skillType)
+            {
+                return skill;
+            }
         }
+
+        return null;
     }
-    
-    private List<ISkillType> RandomizeSkills()
+
+    private List<SkillPreset> RandomizeSkills()
     {
-        var skillSaber = new List<ISkillType>() { ISkillType.LIGHTSABER, ISkillType.LIGHTSABER, ISkillType.LIGHTSABER }; //test
+        var skill1 = skillsList.Skills[Random.Range(0, skillsList.Skills.Count)];
+        var skill2 = skillsList.Skills[Random.Range(0, skillsList.Skills.Count)];
+        var skill3 = skillsList.Skills[Random.Range(0, skillsList.Skills.Count)];
+
+        var skillSaber = new List<SkillPreset>()
+            { skill1, skill2, skill3 }; //test
         return skillSaber;
     }
 }

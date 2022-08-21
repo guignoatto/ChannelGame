@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47037092f2d18d4cbeedd9ece58690b, type: 3}
   m_Name: WeaponsList
   m_EditorClassIdentifier: 
-  LightSaber: {fileID: 6711906454993127912, guid: c4c3057d1e28b014cb87101b6672640c, type: 3}
+  Skills:
+  - {fileID: 11400000, guid: 74eb48450c5066042804e4ef387a4eb8, type: 2}
+  - {fileID: 11400000, guid: 11d7102f46811e24187d7da3a77c6aa8, type: 2}
+  - {fileID: 11400000, guid: a1e2303aaead1df42a9b787a2ad7134c, type: 2}
+  - {fileID: 11400000, guid: 900574860494d0a47a565e22734e9703, type: 2}

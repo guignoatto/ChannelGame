@@ -29,9 +29,9 @@ public class ExperieceDrop : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.TryGetComponent(out PlayerMovement xp))
+        if (col.gameObject.TryGetComponent(out PlayerController pc))
         {
-            xp.GetExperiencePoints(exPoints);
+            pc.GetExperience(exPoints);
             Destroy(gameObject);
         }
     }

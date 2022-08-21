@@ -11,6 +11,9 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] private GameObject experience;
     [SerializeField] private float life;
     [SerializeField] private float _speed;
+
+    private float maxLife;
+    private EnemyView _enemyView;
     private PlayerMovement _target;
     private Rigidbody2D _rbd;
     
@@ -21,8 +24,9 @@ public class EnemyBase : MonoBehaviour
     {
         if (_projectileHited.Contains(projectile))
             return;
-        _projectileHited.Add(projectile);
+        //_projectileHited.Add(projectile);
         life -= damage;
+        _enemyView.UpdateHealthBar(life/maxLife);
         if (life <= 0)
         {
             gameObject.SetActive(false);
@@ -31,8 +35,10 @@ public class EnemyBase : MonoBehaviour
     }
     private void Start()
     {
+        _enemyView = GetComponent<EnemyView>();
         _target = FindObjectOfType<PlayerMovement>();
         _rbd = GetComponent<Rigidbody2D>();
+        maxLife = life;
     }
 
     private void Update()

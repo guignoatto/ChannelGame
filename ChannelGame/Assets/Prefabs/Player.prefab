@@ -152,9 +152,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8761676766501297197}
-  - component: {fileID: 8761676766501297196}
   - component: {fileID: 8761676766501297199}
   - component: {fileID: 1104559504}
+  - component: {fileID: 6706775197880680408}
+  - component: {fileID: 8761676766501297196}
+  - component: {fileID: 1702336727}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -180,19 +182,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8761676766501297196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8761676766501297198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87c10511cea8cba47ac5c3a868ecf571, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 5
 --- !u!50 &8761676766501297199
 Rigidbody2D:
   serializedVersion: 4
@@ -230,6 +219,43 @@ CapsuleCollider2D:
   m_Offset: {x: -0.012666702, y: -0.5488882}
   m_Size: {x: 0.84622157, y: 1.0911102}
   m_Direction: 0
+--- !u!114 &6706775197880680408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761676766501297198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63c2959f05de5343b25aec536eb2abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8761676766501297196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761676766501297198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87c10511cea8cba47ac5c3a868ecf571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 5
+--- !u!114 &1702336727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761676766501297198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147bca4407c8fb74799850a77dd41a2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8761676767426694665
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,8 +346,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 8761676766501297197}
     m_Modifications:
     - target: {fileID: 1774866984011551862, guid: a0df42200d78276408c8e880f9dd72ac, type: 3}
+      propertyPath: _skillPreset
+      value: 
+      objectReference: {fileID: 11400000, guid: 74eb48450c5066042804e4ef387a4eb8, type: 2}
+    - target: {fileID: 1774866984011551862, guid: a0df42200d78276408c8e880f9dd72ac, type: 3}
       propertyPath: _skillCooldown
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774866984011551862, guid: a0df42200d78276408c8e880f9dd72ac, type: 3}
+      propertyPath: _skillDuration
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1774866984011551864, guid: a0df42200d78276408c8e880f9dd72ac, type: 3}
       propertyPath: m_Name
