@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private PlayerMovement _playerMovement;
     private PlayerExperience _playerExperience;
     private PlayerMagneticField _playerMagneticField;
+    private PlayerView _playerView;
     
     public void GetExperience(float xp)
     {
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
         _playerMovement = GetComponent<PlayerMovement>();
         _playerExperience = GetComponent<PlayerExperience>();
         _playerMagneticField = GetComponentInChildren<PlayerMagneticField>();
+        _playerView = GetComponent<PlayerView>();
 
         SetEventHandlers();
     }
@@ -27,10 +29,22 @@ public class PlayerController : MonoBehaviour
     private void SetEventHandlers()
     {
         _playerExperience.LevelUpEvent += LevelUpEventHandler;
+        _playerMovement.PlayerStop += PlayerStopHandler;
+        _playerMovement.PlayerWalk += PlayerWalkHandler;
     }
 
     private void LevelUpEventHandler()
     {
         LevelUpEvent?.Invoke();
+    }
+
+    private void PlayerStopHandler()
+    {
+        _playerView.SetIdleAnimation();
+    }
+
+    private void PlayerWalkHandler()
+    {
+        _playerView.SetWalkingAnimation();
     }
 }

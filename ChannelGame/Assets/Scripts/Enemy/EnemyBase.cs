@@ -11,6 +11,7 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] private GameObject experience;
     [SerializeField] private float life;
     [SerializeField] private float _speed;
+    [SerializeField] private float _damage;
 
     private float maxLife;
     private EnemyView _enemyView;
@@ -24,13 +25,13 @@ public class EnemyBase : MonoBehaviour
     {
         if (_projectileHited.Contains(projectile))
             return;
-        //_projectileHited.Add(projectile);
+        _projectileHited.Add(projectile);
         life -= damage;
         _enemyView.UpdateHealthBar(life/maxLife);
         if (life <= 0)
         {
-            gameObject.SetActive(false);
             Instantiate(experience,transform.position,experience.transform.rotation);
+            gameObject.SetActive(false);
         }
     }
     private void Start()

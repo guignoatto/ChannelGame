@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkillName: Lightsaber
   SkillPrefab: {fileID: 1774866984011551864, guid: a0df42200d78276408c8e880f9dd72ac, type: 3}
-  SkillProjectile: {fileID: 6711906454993127912, guid: c4c3057d1e28b014cb87101b6672640c, type: 3}
+  SkillProjectile: {fileID: 2534009808146083160, guid: 533be34c9b945f846ab66c243d87ab2b, type: 3}
   SkillType: 1
+  skillPickSprite: {fileID: 665086227046231040, guid: 5963d018f011f7042b90290ab07de23d, type: 3}
   Damage: 10
-  Cooldown: 2
+  Cooldown: 10.3
   ProjectileSpeed: 10
   ProjectileDuration: 0.5

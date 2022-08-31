@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4947237216544722635}
   - component: {fileID: 4853622156866785401}
   - component: {fileID: 6045191257552727028}
-  - component: {fileID: 2586039966944347898}
+  - component: {fileID: -4007070225530832495}
   m_Layer: 0
-  m_Name: Machinegun
+  m_Name: Sword360
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0018539492, y: 0.0028314665}
   m_Size: {x: 0.36478478, y: 1.2920483}
   m_Direction: 0
---- !u!114 &2586039966944347898
+--- !u!114 &-4007070225530832495
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3344139667191634153}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fb0ba84677749c4d85cb7d691992e13, type: 3}
+  m_Script: {fileID: 11500000, guid: fde846c90fb22584a8eeb8fe81ad1617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationSpeed: 0
@@ -109,13 +109,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5421503621236930092}
-  m_LocalRotation: {x: -0, y: -0, z: -0.0013508169, w: 0.9999991}
+  m_LocalRotation: {x: -0, y: -0, z: 0.38667828, w: 0.9222147}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.142, y: 0.142, z: 0.142}
   m_Children: []
   m_Father: {fileID: 4947237216544722635}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.155}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45.496}
 --- !u!212 &4717523649257036725
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 8e9cac609662d0d4496c74d4ec486d40, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d1624b74a4d8e5489ac94549c0d0876, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class SkillView : MonoBehaviour
 {
@@ -27,11 +28,13 @@ public class SkillView : MonoBehaviour
 
     public void GetSkillForButtons(List<SkillPreset> skillPresets)
     {
-        for (int i = 0; i < skillPresets.Count; i++)
+        for (int i = 0; i < _buttonSkillsList.Count; i++)
         {
             //todo change button view
-            _buttonSkillsList[i].SkillType = skillPresets[i].SkillType;
-            _buttonSkillsList[i].SkillText.text = skillPresets[i].SkillName;
+            var randomSkill = Random.Range(0,skillPresets.Count);
+            _buttonSkillsList[i].SkillType = skillPresets[randomSkill].SkillType;
+            _buttonSkillsList[i].SkillText.text = skillPresets[randomSkill].SkillName;
+            _buttonSkillsList[i].SkillSprite.sprite = skillPresets[randomSkill].skillPickSprite;
         }
     }
 

@@ -16,6 +16,7 @@ MonoBehaviour:
   SkillPrefab: {fileID: 1774866984011551864, guid: a0df42200d78276408c8e880f9dd72ac, type: 3}
   SkillProjectile: {fileID: 3344139667191634153, guid: 9ef12133b31187d418a2b64011224b44, type: 3}
   SkillType: 3
+  skillPickSprite: {fileID: 21300000, guid: 6d1624b74a4d8e5489ac94549c0d0876, type: 3}
   Damage: 20
   Cooldown: 1
   ProjectileSpeed: 16

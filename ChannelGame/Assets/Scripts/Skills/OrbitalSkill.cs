@@ -9,21 +9,22 @@ public class OrbitalSkill : SkillBase
 
     private void Awake()
     {
-        projectileParenTransform = spawnSkill;
+        projectileParentTransform = spawnSkill;
     }
-    protected override ProjectileBase Attack()
-    {
-        var nearestEnemy = GetClosestEnemy(_enemyListTest);
-        if (nearestEnemy == null)
-            return null;
-        ProjectileBase pb = Instantiate(_skillPreset.SkillProjectile, spawnSkill, false).GetComponent<ProjectileBase>();
-        pb.NearestEnemy = nearestEnemy;
-        pb.ProjectileDuration = _projectileDuration;
-        pb.ProjectileSpeed = _projectileSpeed;
-        pb.Damage = _damage;
-        pb.Initialize(projectileParenTransform);
-        return pb;
-    }
+    
+    
+    // protected override void Attack(Transform projectileParents = null)
+    // {
+    //     var nearestEnemy = GetClosestEnemy(_enemyListTest);
+    //     if (nearestEnemy == null)
+    //         return;
+    //     ProjectileBase pb = Instantiate(_skillPreset.SkillProjectile, spawnSkill).GetComponent<ProjectileBase>();
+    //     pb.NearestEnemy = nearestEnemy;
+    //     pb.ProjectileDuration = _projectileDuration;
+    //     pb.ProjectileSpeed = _projectileSpeed;
+    //     pb.Damage = _damage;
+    //     pb.Initialize(projectileParentTransform);
+    // }
 
     protected override void Update()
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "SkillPreset", menuName = "Skills/SkillPreset")]
 public class SkillPreset : ScriptableObject
@@ -9,6 +10,7 @@ public class SkillPreset : ScriptableObject
     public GameObject SkillPrefab;
     public GameObject SkillProjectile;
     public ISkillType SkillType;
+    public Sprite skillPickSprite;
     [Header("Base Status")]
     public float Damage;
     public float Cooldown;

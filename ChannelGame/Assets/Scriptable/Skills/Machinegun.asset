@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkillName: Machinegun
   SkillPrefab: {fileID: 1774866984011551864, guid: a0df42200d78276408c8e880f9dd72ac, type: 3}
-  SkillProjectile: {fileID: 3344139667191634153, guid: 6b13dd0f052b0af4e9047f047e6dfeda, type: 3}
+  SkillProjectile: {fileID: 7307053969696378856, guid: fbd9b5b8db8059440aaf45d74a2cada1, type: 3}
   SkillType: 2
+  skillPickSprite: {fileID: 21300000, guid: f313e8660d26ad04eaf5d42de553c3e4, type: 3}
   Damage: 2
   Cooldown: 10
   ProjectileSpeed: 20

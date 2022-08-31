@@ -340,9 +340,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc2237a7e2c5de4796f6839c3d88268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  experience: {fileID: 7613684744548050214}
+  experience: {fileID: 6919287380235992177, guid: 0b0e8b4ecd1f27a4cad47b6464e4335e, type: 3}
   life: 100
   _speed: 1
+  _damage: 0
 --- !u!114 &6699525780696116697
 MonoBehaviour:
   m_ObjectHideFlags: 0

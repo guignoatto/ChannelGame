@@ -8,5 +8,6 @@ public enum ISkillType
     LIGHTSABER,
     MACHINEGUN,
     SWORD,
-    ORBITAL
+    ORBITAL,
+    SKILL360
 }

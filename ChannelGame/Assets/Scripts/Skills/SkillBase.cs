@@ -16,14 +16,14 @@ public class SkillBase : MonoBehaviour
     [SerializeField] protected float _projectileSpeed;
     [SerializeField] protected float _projectileDuration;
 
-    protected Transform projectileParenTransform = null;
-    private SkillSound _skillSound;
-    private float timer;
+    protected Transform projectileParentTransform = null;
+    protected float timer;
+    protected SkillSound _skillSound;
 
-    private void Start()
+    protected virtual void Start()
     {
-        if (projectileParenTransform is null)
-            projectileParenTransform = transform;
+        if (projectileParentTransform == null)
+            projectileParentTransform = transform;
 
         timer = 0;
         _skillSound = GetComponent<SkillSound>();
@@ -32,7 +32,7 @@ public class SkillBase : MonoBehaviour
         _cooldown = _skillPreset.Cooldown;
         _projectileSpeed = _skillPreset.ProjectileSpeed;
         _projectileDuration = _skillPreset.ProjectileDuration;
-        Attack();
+        Attack(projectileParentTransform);
     }
     protected virtual void Update()
     {
@@ -40,22 +40,24 @@ public class SkillBase : MonoBehaviour
         if (timer >= _cooldown / Math.Pow(_cooldown, 2))
         {
             timer = 0;
-            Attack();
+            Attack(projectileParentTransform);
         }
     }
 
-    protected virtual ProjectileBase Attack()
+    protected virtual void Attack(Transform projectileParent = null)
     {
+        if (projectileParent == null)
+            projectileParent = transform;
+        
         var nearestEnemy = GetClosestEnemy(_enemyListTest);
         if (nearestEnemy == null)
-            return null;
-        ProjectileBase pb = Instantiate(_skillPreset.SkillProjectile, transform).GetComponent<ProjectileBase>();
+            return;
+        ProjectileBase pb = Instantiate(_skillPreset.SkillProjectile, projectileParent).GetComponent<ProjectileBase>();
         pb.NearestEnemy = nearestEnemy;
         pb.ProjectileDuration = _projectileDuration;
         pb.ProjectileSpeed = _projectileSpeed;
         pb.Damage = _damage;
-        pb.Initialize(projectileParenTransform);
-        return pb;
+        pb.Initialize(projectileParent);
     }
     protected Transform GetClosestEnemy(List<EnemyBase> enemies)
     {
