@@ -85,7 +85,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rotationSpeed: 10
   _multiTarget: 1
-  OrbitDistance: 0
 --- !u!1 &7878216689149927416
 GameObject:
   m_ObjectHideFlags: 0

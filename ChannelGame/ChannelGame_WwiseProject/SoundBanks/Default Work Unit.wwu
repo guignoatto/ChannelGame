@@ -5,7 +5,9 @@
 			<ChildrenList>
 				<SoundBank Name="MainSoundBank" ID="{4CD9EAFC-B19A-4F66-9A96-7C6F2AB60E73}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Enemy_Death" ID="{8753CC33-584F-47C2-8629-2198FCDF9332}" WorkUnitID="{2DDED858-1B63-41B8-80D9-8DE02DAE87A4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_XP_PickUp" ID="{93EC977A-3FFE-4B90-9916-A012EE59B374}" WorkUnitID="{2DDED858-1B63-41B8-80D9-8DE02DAE87A4}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Shot_MachineGun" ID="{189D7753-5E18-4DDA-8918-89781F6B0AF3}" WorkUnitID="{2DDED858-1B63-41B8-80D9-8DE02DAE87A4}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

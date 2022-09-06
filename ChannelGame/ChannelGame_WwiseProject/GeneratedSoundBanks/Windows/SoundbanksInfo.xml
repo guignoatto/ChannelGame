@@ -9,24 +9,60 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{6415AAD9-D73F-8EA3-A9CC-F275A7EF452E}">
+		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{95337341-A8C5-6809-EEA4-E62D9E5A536E}">
 			<ShortName>MainSoundBank</ShortName>
 			<Path>MainSoundBank.bnk</Path>
 			<Media>
+				<File Id="136212208" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>77245__studiocopsey__power-up.wav</ShortName>
+					<CachePath>SFX/77245__studiocopsey__power-up_7E948A5A.wem</CachePath>
+				</File>
 				<File Id="306663159" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>77245__studiocopsey__power-up.wav</ShortName>
-					<CachePath>SFX/77245__studiocopsey__power-up_B4199003.wem</CachePath>
+					<CachePath>SFX/77245__studiocopsey__power-up_CE74251C.wem</CachePath>
+				</File>
+				<File Id="529159546" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Explosion8bit.wav</ShortName>
+					<CachePath>SFX/Explosion8bit_3941A393.wem</CachePath>
 				</File>
 			</Media>
+			<Plugins>
+				<Custom>
+					<Plugin Id="542053558" Name="Monsterize (Custom)" LibName="Wwise Pitch Shifter" LibId="8912899"/>
+				</Custom>
+				<Sharesets>
+					<Plugin Id="654807232" Name="Chipmunk" LibName="Wwise Pitch Shifter" LibId="8912899"/>
+				</Sharesets>
+			</Plugins>
 			<Events>
+				<Event Id="1205999388" Name="Enemy_Death" DurationType="OneShot" DurationMin="0.11266116" DurationMax="0.11266116">
+					<MediaRefs>
+						<MediaRef Id="529159546"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Sharesets>
+							<PluginRef Id="654807232"/>
+						</Sharesets>
+					</PluginRefs>
+				</Event>
 				<Event Id="1598016745" Name="Play_XP_PickUp" DurationType="OneShot" DurationMin="0.14542484" DurationMax="0.14542484">
 					<MediaRefs>
 						<MediaRef Id="306663159"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="4191302951" Name="Shot_MachineGun" DurationType="OneShot" DurationMin="0.0863991" DurationMax="0.0863991">
+					<MediaRefs>
+						<MediaRef Id="136212208"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="542053558"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{27583624-5B8E-2CDA-D317-E9F7A02C7AF9}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{C3088A68-CC8A-380A-A4EE-AC0050B58068}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -40,5 +76,5 @@
 			</Busses>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{C05E3CE1-CF99-F9E6-83EF-CB2C9A10B7F7}</FileHash>
+	<FileHash>{B6846BBC-94EA-FF75-7A0F-99B4C207D689}</FileHash>
 </SoundBanksInfo>

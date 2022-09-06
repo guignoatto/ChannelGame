@@ -14,6 +14,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Shot_MachineGun" ID="{189D7753-5E18-4DDA-8918-89781F6B0AF3}">
+					<ChildrenList>
+						<Action Name="" ID="{C9D66F22-8B32-426D-985B-4C527655D0D0}" ShortID="266803312">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MachineGun" ID="{48AB512A-6092-487E-B4CD-094ED7FE9B56}" WorkUnitID="{54E29680-853C-46B4-AAB7-78E8FFB87F64}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Enemy_Death" ID="{8753CC33-584F-47C2-8629-2198FCDF9332}">
+					<ChildrenList>
+						<Action Name="" ID="{29C0D1B5-3FFE-46DE-9FFB-57D82CA2CFDB}" ShortID="965215368">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Enemy_Death" ID="{1659E6C0-0DBA-49F3-AF91-764AC26E1F5D}" WorkUnitID="{54E29680-853C-46B4-AAB7-78E8FFB87F64}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

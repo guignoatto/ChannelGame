@@ -7,7 +7,7 @@
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-35</Value>
+								<Value>-52</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -22,6 +22,7 @@
 					<ChildrenList>
 						<AudioFileSource Name="77245__studiocopsey__power-up" ID="{CEDBEEE1-8B3C-4F43-9608-424324879B7E}">
 							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.0806579972230687"/>
 								<Property Name="FadeOutDuration" Type="Real64" Value="0.145424836601307"/>
 								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 								<Property Name="TrimEnd" Type="Real64" Value="0.145424836601307"/>
@@ -35,6 +36,107 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="77245__studiocopsey__power-up" ID="{CEDBEEE1-8B3C-4F43-9608-424324879B7E}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="MachineGun" ID="{48AB512A-6092-487E-B4CD-094ED7FE9B56}" ShortID="286956494">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-66</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
+						</Reference>
+						<Reference Name="Effect0">
+							<Custom CreatedFrom="{99F80B38-1C45-42CE-9BCD-E94F3885DCAA}">
+								<Effect Name="Monsterize (Custom)" ID="{A8F19D00-84F9-436D-ABB0-C596F31E3005}" ShortID="542053558" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterFrequency" Type="Real32" Value="2000"/>
+										<Property Name="Pitch" Type="Real32" Value="-2000"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BD3573F6-C4E9-43D4-8D14-91B27BD72E6B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="77245__studiocopsey__power-up" ID="{FA96B4DF-4F2B-45AA-8CDA-63394432F804}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.0166808368758856"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.128384596149037"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.214783695923981"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>77245__studiocopsey__power-up.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="136212208"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="77245__studiocopsey__power-up" ID="{FA96B4DF-4F2B-45AA-8CDA-63394432F804}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Enemy_Death" ID="{1659E6C0-0DBA-49F3-AF91-764AC26E1F5D}" ShortID="46531649">
+					<PropertyList>
+						<Property Name="OutputBusHighpass" Type="int16">
+							<ValueList>
+								<Value>32</Value>
+							</ValueList>
+						</Property>
+						<Property Name="OutputBusVolume" Type="Real64">
+							<ValueList>
+								<Value>-18</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+							<ObjectRef Name="Chipmunk" ID="{54F9F04F-0D14-46AB-B38B-21CFD2EB46F6}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BD3573F6-C4E9-43D4-8D14-91B27BD72E6B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="sfx_wall" ID="{8D044392-8033-4D3B-912E-B94929529509}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.0520258064516132"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.0520258064516132"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.113156129032258"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>sfx_wall.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="523844905"/>
+							</MediaIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="Explosion8bit" ID="{3730B4BE-28ED-4AD8-9EA1-CC8E1C830531}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.052248652803079"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.122457780007216"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.235118937613855"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Explosion8bit.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="529159546"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Explosion8bit" ID="{3730B4BE-28ED-4AD8-9EA1-CC8E1C830531}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

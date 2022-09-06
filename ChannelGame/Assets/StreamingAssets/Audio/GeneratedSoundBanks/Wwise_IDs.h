@@ -13,7 +13,9 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID ENEMY_DEATH = 1205999388U;
         static const AkUniqueID PLAY_XP_PICKUP = 1598016745U;
+        static const AkUniqueID SHOT_MACHINEGUN = 4191302951U;
     } // namespace EVENTS
 
     namespace BANKS
