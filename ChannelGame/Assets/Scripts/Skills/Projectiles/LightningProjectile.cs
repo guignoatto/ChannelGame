@@ -26,7 +26,10 @@ public class LightningProjectile : ProjectileBase
     protected override void Update()
     {
         base.Update();
-        
+        transform.position = Vector3.MoveTowards(
+            transform.position, _target.transform.position, _projectileSpeed * Time.deltaTime
+        );
+        transform.rotation = Quaternion.FromToRotation(Vector3.up, ( _target.position - transform.position ).normalized);
     }
     
     
@@ -47,8 +50,8 @@ public class LightningProjectile : ProjectileBase
 
             
         var direction = ( _target.position - transform.position ).normalized;
-        transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
-        _rbd.velocity = direction * _projectileSpeed;
+        
+        // _rbd.velocity = direction * _projectileSpeed;
     }
 
     private IEnumerator SkillCooldown()
@@ -75,6 +78,11 @@ public class LightningProjectile : ProjectileBase
                 StartCoroutine(SkillCooldown());
                 _bounces -= 1;
             }
+        }
+        else
+        {
+            StartCoroutine(SkillCooldown());
+            _bounces -= 1;
         }
     }
 }
