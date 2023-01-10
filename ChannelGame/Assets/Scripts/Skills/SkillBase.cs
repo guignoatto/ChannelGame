@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Timeline;
 
 public class SkillBase : MonoBehaviour
 {
+    public Action<List<EnemyBase>> OnRefreshEnemies;
+    public Func<ISkillType, ProjectileBase> GetProjectile;
     public SkillPreset _skillPreset;
     
     [SerializeField] protected List<EnemyBase> _enemyListTest;
@@ -20,7 +23,11 @@ public class SkillBase : MonoBehaviour
     protected float timer;
     protected SkillSound _skillSound;
 
-    protected virtual void Start()
+    public virtual void RefreshEnemyList(List<EnemyBase> newEnemyList)
+    {
+        _enemyListTest = newEnemyList;
+    }
+    public virtual void Initialize()
     {
         if (projectileParentTransform == null)
             projectileParentTransform = transform;
@@ -52,12 +59,14 @@ public class SkillBase : MonoBehaviour
         var nearestEnemy = GetClosestEnemy(_enemyListTest);
         if (nearestEnemy == null)
             return;
-        ProjectileBase pb = Instantiate(_skillPreset.SkillProjectile, projectileParent).GetComponent<ProjectileBase>();
+        ProjectileBase pb = GetProjectile?.Invoke(_skillPreset.SkillType);
+        
+        pb.gameObject.SetActive(true);
         pb.NearestEnemy = nearestEnemy;
         pb.ProjectileDuration = _projectileDuration;
         pb.ProjectileSpeed = _projectileSpeed;
         pb.Damage = _damage;
-        pb.Initialize(projectileParent);
+        pb.Initialize(projectileParent, _skillPreset.SkillType);
     }
     protected Transform GetClosestEnemy(List<EnemyBase> enemies)
     {
@@ -80,4 +89,5 @@ public class SkillBase : MonoBehaviour
     public float ProjectileDuration { get => _projectileDuration; set => _projectileDuration = value; }
     public float ProjectileSpeed { get => _projectileSpeed; set => _projectileSpeed = value; }
     public float Cooldown { get => _cooldown; set => _cooldown = value; }
+    public List<EnemyBase> EnemyList { get => _enemyListTest; set => _enemyListTest = value; }
 }

@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkillName: 360 Skill
   SkillPrefab: {fileID: 1774866984011551864, guid: 96fad5fb8b1d4ef408d07c2d826a8967, type: 3}
-  SkillProjectile: {fileID: 3344139667191634153, guid: 3bb8a817b84cc5445ac38179839e0db8, type: 3}
+  SkillProjectile: {fileID: 7186771076071766207, guid: 1bcd7b561d22b764285c1c6937e96b9a, type: 3}
   SkillType: 5
-  skillPickSprite: {fileID: 21300000, guid: 6d1624b74a4d8e5489ac94549c0d0876, type: 3}
+  skillPickSprite: {fileID: -966530587040148632, guid: 3112438ebd24f8d479d604e48c5346ca, type: 3}
   Damage: 10
-  Cooldown: 1
+  Cooldown: 0.8
   ProjectileSpeed: 10
   ProjectileDuration: 2

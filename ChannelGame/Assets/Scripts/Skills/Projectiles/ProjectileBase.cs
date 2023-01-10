@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class ProjectileBase : MonoBehaviour
 {
+    public Action<ISkillType ,ProjectileBase> projectileDestroyed;
+    
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private bool _multiTarget = false;
     protected float _projectileSpeed;
@@ -14,20 +16,24 @@ public class ProjectileBase : MonoBehaviour
     protected Transform _nearestEnemy;
     protected Transform _parent;
     protected Rigidbody2D _rbd;
+    protected ISkillType _skillType;
+    private IEnumerator _projectileLifeCooldown;
 
-    public virtual void Initialize(Transform parent)
+    public virtual void Initialize(Transform parent, ISkillType skillType)
     {
         _rbd = GetComponent<Rigidbody2D>();
-        _parent = parent;
-
+        transform.parent = parent;
+        _skillType = skillType;
+        transform.localPosition = Vector3.zero;
         LaunchProjectile();
-        Destroy(gameObject, _projectileDuration);
+        _projectileLifeCooldown = ProjectileLifeCooldown(_projectileDuration);
+        StartCoroutine(_projectileLifeCooldown);
     }
 
     protected virtual void Update()
     {
         if (_rotationSpeed > 0)
-            transform.Rotate(0f, 0f, _rotationSpeed, Space.Self);
+            transform.Rotate(0f, 0f, _rotationSpeed * Time.deltaTime, Space.Self);
     }
 
     protected virtual void LaunchProjectile()
@@ -39,14 +45,23 @@ public class ProjectileBase : MonoBehaviour
         _rbd.velocity = moveDirection;
     }
 
-    private void OnTriggerEnter2D(Collider2D other2D)
+    protected virtual void OnTriggerEnter2D(Collider2D other2D)
     {
         if (other2D.gameObject.TryGetComponent(out EnemyBase enemy))
         {
             enemy.TakeDamage(_damage, this);
             if (!_multiTarget)
-                Destroy(gameObject);
+            {
+                StopCoroutine(_projectileLifeCooldown);
+                projectileDestroyed?.Invoke(_skillType, this);
+            }
         }
+    }
+
+    private IEnumerator ProjectileLifeCooldown(float projectileDuration)
+    {
+        yield return new WaitForSeconds(projectileDuration);
+        projectileDestroyed?.Invoke(_skillType,this);
     }
 
     public Transform NearestEnemy

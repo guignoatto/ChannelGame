@@ -18,6 +18,6 @@ MonoBehaviour:
   SkillType: 1
   skillPickSprite: {fileID: 665086227046231040, guid: 5963d018f011f7042b90290ab07de23d, type: 3}
   Damage: 10
-  Cooldown: 10.3
+  Cooldown: 2
   ProjectileSpeed: 10
   ProjectileDuration: 0.5

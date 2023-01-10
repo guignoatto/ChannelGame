@@ -14,6 +14,6 @@ public class OrbitalProjectile : ProjectileBase
     protected override void Update()
     {
         base.Update();
-        transform.position = _parent.position;
+        transform.position = transform.parent.position;
     }
 }

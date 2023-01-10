@@ -11,7 +11,12 @@ public class PlayerController : MonoBehaviour
     private PlayerExperience _playerExperience;
     private PlayerMagneticField _playerMagneticField;
     private PlayerView _playerView;
-    
+    private List<SkillBase> _mySkills;
+
+    public void GetNewEnemyList(List<EnemyBase> newEnemyList)
+    {
+        
+    }
     public void GetExperience(float xp)
     {
         _playerExperience.GetExperiencePoints(xp);

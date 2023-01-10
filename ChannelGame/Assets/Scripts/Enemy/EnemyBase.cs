@@ -8,6 +8,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyBase : MonoBehaviour
 {
+    public Action<EnemyBase> returnToPool;
+    
     [SerializeField] private GameObject experience;
     [SerializeField] private float life;
     [SerializeField] private float _speed;
@@ -18,21 +20,17 @@ public class EnemyBase : MonoBehaviour
     private PlayerMovement _target;
     private Rigidbody2D _rbd;
     
-    private List<ProjectileBase> _projectileHited = new List<ProjectileBase>();
+    private List<ProjectileBase> _projectileCollided = new List<ProjectileBase>();
 
 
     public void TakeDamage(float damage, ProjectileBase projectile)
     {
-        if (_projectileHited.Contains(projectile))
-            return;
-        _projectileHited.Add(projectile);
+        // if (_projectileHited.Contains(projectile))
+        //     return;
+        // _projectileHited.Add(projectile);
         life -= damage;
         _enemyView.UpdateHealthBar(life/maxLife);
-        if (life <= 0)
-        {
-            Instantiate(experience,transform.position,experience.transform.rotation);
-            gameObject.SetActive(false);
-        }
+        CheckDeath();
     }
     private void Start()
     {
@@ -44,8 +42,19 @@ public class EnemyBase : MonoBehaviour
 
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(
+         transform.position = Vector3.MoveTowards(
             transform.position, _target.transform.position, _speed * Time.deltaTime
             );
+    }
+
+    private void CheckDeath()
+    {
+        if (life <= 0)
+        {
+            Instantiate(experience,transform.position,experience.transform.rotation);
+            life = maxLife;
+            _enemyView.UpdateHealthBar(life/maxLife);
+            returnToPool?.Invoke(this);
+        }
     }
 }
