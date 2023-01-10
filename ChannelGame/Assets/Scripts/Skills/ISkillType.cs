@@ -9,5 +9,6 @@ public enum ISkillType
     MACHINEGUN,
     SWORD,
     ORBITAL,
-    SKILL360
+    SKILL360,
+    LIGHTNING_SKILL
 }

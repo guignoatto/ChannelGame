@@ -639,6 +639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016f055d63a86cb4ea164ad279c69756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _projectilePool: {fileID: 0}
   skillsList: {fileID: 11400000, guid: e97f9c6b2ae39e2469d74778cc76cc6d, type: 2}
   _player: {fileID: 0}
 --- !u!114 &2856946674869380048

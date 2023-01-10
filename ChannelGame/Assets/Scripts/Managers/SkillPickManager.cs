@@ -5,6 +5,9 @@ using Random = UnityEngine.Random;
 
 public class SkillPickManager : MonoBehaviour
 {
+    public Action<SkillBase> NewSkillInstantiated;
+
+    [SerializeField] private ProjectilePool _projectilePool;
     [SerializeField] private SkillsList skillsList;
     [SerializeField] private PlayerMovement _player;
 
@@ -19,6 +22,7 @@ public class SkillPickManager : MonoBehaviour
     {
         _skillView = GetComponent<SkillView>();
         _skillView.SkillClickedEvent += InstantiateNewSkill;
+        _projectilePool.Initialize();
     }
 
     private void InstantiateNewSkill(ISkillType skillType)
@@ -26,6 +30,9 @@ public class SkillPickManager : MonoBehaviour
         var skillPreset = GetSkillType(skillType);
         var skill = Instantiate(skillPreset.SkillPrefab, _player.transform).GetComponent<SkillBase>();
         skill._skillPreset = skillPreset;
+        skill.GetProjectile = _projectilePool.GetProjectile;
+        skill.Initialize();
+        NewSkillInstantiated.Invoke(skill);
     }
 
     private SkillPreset GetSkillType(ISkillType skillType)

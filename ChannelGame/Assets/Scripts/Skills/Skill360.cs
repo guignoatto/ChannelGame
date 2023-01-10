@@ -8,7 +8,7 @@ using UnityEngine.PlayerLoop;
 public class Skill360 : SkillBase
 {
     [SerializeField] private List<Transform> _spawnList;
-    protected override void Start()
+    public override void Initialize()
     {
         if (projectileParentTransform is null)
             projectileParentTransform = transform;
@@ -36,7 +36,7 @@ public class Skill360 : SkillBase
     {
         foreach (var spawn in _spawnList)
         {
-            timer = 0;
+             timer = 0;
             Attack(spawn);
         }
     }
