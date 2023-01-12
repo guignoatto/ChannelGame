@@ -39,3 +39,5 @@ sysinfo.txt
 
 # Crashlytics generated file
 Assets/StreamingAssets/crashlytics-build.properties
+ChannelGame/Logs
+ChannelGame/ChannelGame_WwiseProject/.cache
