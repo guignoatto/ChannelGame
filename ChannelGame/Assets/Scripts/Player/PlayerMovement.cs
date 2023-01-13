@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
     public Action<ISkillType> GetWeaponTypeEvent;
     public Action PlayerStop;
     public Action PlayerWalk;
+    public EnemyDetectionField enemyDetectionField;
+    
     [Range(0, 10)] 
     [SerializeField] private float _speed;
 

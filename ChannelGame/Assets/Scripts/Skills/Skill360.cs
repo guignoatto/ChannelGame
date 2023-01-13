@@ -15,7 +15,7 @@ public class Skill360 : SkillBase
 
         timer = 0;
         _skillSound = GetComponent<SkillSound>();
-        _enemyListTest = FindObjectsOfType<EnemyBase>().ToList();
+        _enemyList = FindObjectsOfType<EnemyBase>().ToList();
         _damage = _skillPreset.Damage;
         _cooldown = _skillPreset.Cooldown;
         _projectileSpeed = _skillPreset.ProjectileSpeed;

@@ -11,8 +11,10 @@ public class SkillBase : MonoBehaviour
     public Action<List<EnemyBase>> OnRefreshEnemies;
     public Func<ISkillType, ProjectileBase> GetProjectile;
     public SkillPreset _skillPreset;
+
+    protected EnemyDetectionField _enemyDetectionField;
     
-    [SerializeField] protected List<EnemyBase> _enemyListTest;
+    [SerializeField] protected List<EnemyBase> _enemyList;
     [Header("SkillAttributes")]
     [SerializeField] protected float _damage;
     [SerializeField] protected float _cooldown;
@@ -25,7 +27,7 @@ public class SkillBase : MonoBehaviour
 
     public virtual void RefreshEnemyList(List<EnemyBase> newEnemyList)
     {
-        _enemyListTest = newEnemyList;
+        _enemyList = newEnemyList;
     }
     public virtual void Initialize()
     {
@@ -34,12 +36,16 @@ public class SkillBase : MonoBehaviour
 
         timer = 0;
         _skillSound = GetComponent<SkillSound>();
-        _enemyListTest = FindObjectsOfType<EnemyBase>().ToList();
+        _enemyList = FindObjectsOfType<EnemyBase>().ToList();
         _damage = _skillPreset.Damage;
         _cooldown = _skillPreset.Cooldown;
         _projectileSpeed = _skillPreset.ProjectileSpeed;
         _projectileDuration = _skillPreset.ProjectileDuration;
         Attack(projectileParentTransform);
+    }
+    public void SetEnemyDetectionField(EnemyDetectionField enemyDetectionField)
+    {
+        _enemyDetectionField = enemyDetectionField;
     }
     protected virtual void Update()
     {
@@ -56,7 +62,7 @@ public class SkillBase : MonoBehaviour
         if (projectileParent == null)
             projectileParent = transform;
         
-        var nearestEnemy = GetClosestEnemy(_enemyListTest);
+        var nearestEnemy = GetClosestEnemy(_enemyList);
         if (nearestEnemy == null)
             return;
         ProjectileBase pb = GetProjectile?.Invoke(_skillPreset.SkillType);
@@ -89,5 +95,5 @@ public class SkillBase : MonoBehaviour
     public float ProjectileDuration { get => _projectileDuration; set => _projectileDuration = value; }
     public float ProjectileSpeed { get => _projectileSpeed; set => _projectileSpeed = value; }
     public float Cooldown { get => _cooldown; set => _cooldown = value; }
-    public List<EnemyBase> EnemyList { get => _enemyListTest; set => _enemyListTest = value; }
+    public List<EnemyBase> EnemyList { get => _enemyList; set => _enemyList = value; } 
 }

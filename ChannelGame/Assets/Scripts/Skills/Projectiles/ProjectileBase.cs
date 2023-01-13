@@ -17,7 +17,7 @@ public class ProjectileBase : MonoBehaviour
     protected Transform _parent;
     protected Rigidbody2D _rbd;
     protected ISkillType _skillType;
-    private IEnumerator _projectileLifeCooldown;
+    protected IEnumerator _projectileLifeCooldown;
 
     public virtual void Initialize(Transform parent, ISkillType skillType)
     {
@@ -58,7 +58,7 @@ public class ProjectileBase : MonoBehaviour
         }
     }
 
-    private IEnumerator ProjectileLifeCooldown(float projectileDuration)
+    protected IEnumerator ProjectileLifeCooldown(float projectileDuration)
     {
         yield return new WaitForSeconds(projectileDuration);
         projectileDestroyed?.Invoke(_skillType,this);

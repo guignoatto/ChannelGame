@@ -31,6 +31,7 @@ public class SkillPickManager : MonoBehaviour
         var skill = Instantiate(skillPreset.SkillPrefab, _player.transform).GetComponent<SkillBase>();
         skill._skillPreset = skillPreset;
         skill.GetProjectile = _projectilePool.GetProjectile;
+        skill.SetEnemyDetectionField(_player.enemyDetectionField);
         skill.Initialize();
         NewSkillInstantiated.Invoke(skill);
     }

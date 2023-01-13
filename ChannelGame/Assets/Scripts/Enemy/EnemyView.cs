@@ -6,6 +6,7 @@ using Image = UnityEngine.UI.Image;
 public class EnemyView : MonoBehaviour
 {
     [SerializeField] private Image _fillLife;
+    [SerializeField] 
 
     public void UpdateHealthBar(float fillAmount)
     {
