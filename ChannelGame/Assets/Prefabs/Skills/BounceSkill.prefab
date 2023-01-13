@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8194807971873006981}
   - component: {fileID: 245004322019376386}
-  - component: {fileID: 6320276207388488187}
   - component: {fileID: 4496217023953379750}
   m_Layer: 0
-  m_Name: LightningSkill
+  m_Name: BounceSkill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,26 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skillPreset: {fileID: 11400000, guid: c6b6dd20ce8ef944480666d118f239fc, type: 2}
-  _enemyListTest: []
+  _enemyList: []
   _damage: 0
   _cooldown: 0
   _projectileSpeed: 0
   _projectileDuration: 0
-  _enemyDetectionField: {fileID: 6320276207388488187}
-  bounces: 10
---- !u!114 &6320276207388488187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7663967599374169649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f14abc5ac317cf479e360acbab105a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnemiesInRange: []
+  _enemyDetectionField: {fileID: 0}
+  _bounces: 10
 --- !u!61 &4496217023953379750
 BoxCollider2D:
   m_ObjectHideFlags: 0
