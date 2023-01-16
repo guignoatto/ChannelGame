@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{09CC0EB7-8395-F46D-4ABB-E2C622290D4B}">
+		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{546A7CAB-428B-28A7-4141-5B6AE583D251}">
 			<ShortName>MainSoundBank</ShortName>
 			<Path>MainSoundBank.bnk</Path>
 			<Media>
@@ -36,7 +36,7 @@
 				</ShareSets>
 			</Plugins>
 			<Events>
-				<Event Id="1205999388" Name="Enemy_Death" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.085381195" DurationMax="0.24771082">
+				<Event Id="1205999388" Name="Enemy_Death" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.09881648" DurationMax="0.24771082">
 					<MediaRefs>
 						<MediaRef Id="529159546"/>
 					</MediaRefs>
@@ -52,7 +52,7 @@
 						<MediaRef Id="306663159"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="4191302951" Name="Shot_MachineGun" DurationType="OneShot" DurationMin="0.10156628" DurationMax="0.10156628">
+				<Event Id="4191302951" Name="Shot_MachineGun" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.10156628" DurationMax="0.10156628">
 					<MediaRefs>
 						<MediaRef Id="136212208"/>
 					</MediaRefs>
@@ -78,5 +78,5 @@
 			</Busses>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{E7B91EDE-9E1C-F32F-75EC-35A9F2398C2C}</FileHash>
+	<FileHash>{74F2FDFE-875F-8B7D-351B-50E91F3FB9F1}</FileHash>
 </SoundBanksInfo>

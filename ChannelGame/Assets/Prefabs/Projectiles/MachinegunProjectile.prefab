@@ -4998,7 +4998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6f423766c3e7604d8d721f5b4957d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerList: f7e1664c
+  triggerList: f2d9e0ec
   useOtherObject: 0
   actionOnEventType: 0
   curveInterpolation: 4
@@ -5032,7 +5032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb089de675daa146b729cf97d5e5e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerList: f7e1664c
+  triggerList: ae8d9d44
   useOtherObject: 0
   data:
     idInternal: 0
