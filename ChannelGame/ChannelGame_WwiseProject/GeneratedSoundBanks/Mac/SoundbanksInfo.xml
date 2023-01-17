@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{546A7CAB-428B-28A7-4141-5B6AE583D251}">
+		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{9C065602-4105-6869-19CD-00FAD82C5A23}">
 			<ShortName>MainSoundBank</ShortName>
 			<Path>MainSoundBank.bnk</Path>
 			<Media>
@@ -26,28 +26,13 @@
 					<CachePath>SFX/Explosion8bit_3941A393.wem</CachePath>
 				</File>
 			</Media>
-			<Plugins>
-				<Custom>
-					<Plugin Id="542053558" Name="Monsterize (Custom)" LibName="Wwise Pitch Shifter" LibId="8912899"/>
-				</Custom>
-				<ShareSets>
-					<Plugin Id="654807232" Name="Chipmunk" LibName="Wwise Pitch Shifter" LibId="8912899"/>
-					<Plugin Id="1588715066" Name="Echoes_Linear" LibName="Wwise Delay" LibId="6946819"/>
-				</ShareSets>
-			</Plugins>
 			<Events>
 				<Event Id="1205999388" Name="Enemy_Death" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.09881648" DurationMax="0.24771082">
 					<MediaRefs>
 						<MediaRef Id="529159546"/>
 					</MediaRefs>
-					<PluginRefs>
-						<ShareSets>
-							<PluginRef Id="654807232"/>
-							<PluginRef Id="1588715066"/>
-						</ShareSets>
-					</PluginRefs>
 				</Event>
-				<Event Id="1598016745" Name="Play_XP_PickUp" DurationType="OneShot" DurationMin="0.12755391" DurationMax="0.28045586">
+				<Event Id="1598016745" Name="Play_XP_PickUp" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.12755391" DurationMax="0.28045586">
 					<MediaRefs>
 						<MediaRef Id="306663159"/>
 					</MediaRefs>
@@ -56,15 +41,10 @@
 					<MediaRefs>
 						<MediaRef Id="136212208"/>
 					</MediaRefs>
-					<PluginRefs>
-						<Custom>
-							<PluginRef Id="542053558"/>
-						</Custom>
-					</PluginRefs>
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{62C468E4-61B2-7395-51A0-F4711639E252}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{DBABE6E6-91D3-D99A-4CF6-53CCB3994CBE}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -74,9 +54,16 @@
 				</AudioDevices>
 			</Plugins>
 			<Busses>
+				<Bus Id="393239870" Name="SFX"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="3991942870" Name="Music"/>
 			</Busses>
+			<GameParameters>
+				<GameParameter Id="988953028" Name="SFXVolume"/>
+				<GameParameter Id="2346531308" Name="MusicVolume"/>
+				<GameParameter Id="2918011349" Name="MasterVolume"/>
+			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{33FAB429-64CE-BE50-E4A1-E79557BA2655}</FileHash>
+	<FileHash>{233A4BB3-CC2C-B6D4-7A02-29C4BD941E0B}</FileHash>
 </SoundBanksInfo>

@@ -3,274 +3,311 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{54E29680-853C-46B4-AAB7-78E8FFB87F64}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="XP_PickUp" ID="{63846322-DC54-4AC4-ABB2-F0FC86438964}" ShortID="235128237">
-					<PropertyList>
-						<Property Name="Pitch" Type="int32">
-							<ModifierList>
-								<ModifierInfo>
-									<Modifier Name="" ID="{513E84DE-B385-4F3D-9CD1-727769C03539}">
-										<PropertyList>
-											<Property Name="Enabled" Type="bool" Value="True"/>
-											<Property Name="Max" Type="Real64" Value="227"/>
-											<Property Name="Min" Type="Real64" Value="-1137"/>
-										</PropertyList>
-									</Modifier>
-								</ModifierInfo>
-							</ModifierList>
-						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-52</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BD3573F6-C4E9-43D4-8D14-91B27BD72E6B}"/>
-						</Reference>
-					</ReferenceList>
+				<Folder Name="SFX" ID="{681CE33F-B8CE-4228-B874-D3D7794B1C90}" ShortID="345327694">
 					<ChildrenList>
-						<AudioFileSource Name="77245__studiocopsey__power-up" ID="{CEDBEEE1-8B3C-4F43-9608-424324879B7E}">
+						<ActorMixer Name="SFX" ID="{4B1BA9C4-34DF-4F0B-90B5-68AF5AC28959}" ShortID="613546548">
 							<PropertyList>
-								<Property Name="FadeInDuration" Type="Real64" Value="0.0806579972230687"/>
-								<Property Name="FadeOutDuration" Type="Real64" Value="0.145424836601307"/>
-								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-								<Property Name="TrimEnd" Type="Real64" Value="0.145424836601307"/>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>12</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>77245__studiocopsey__power-up.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="306663159"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="77245__studiocopsey__power-up" ID="{CEDBEEE1-8B3C-4F43-9608-424324879B7E}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="MachineGun" ID="{48AB512A-6092-487E-B4CD-094ED7FE9B56}" ShortID="286956494">
-					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="1"/>
-						<Property Name="Pitch" Type="int32">
-							<ValueList>
-								<Value>-280</Value>
-							</ValueList>
-						</Property>
-						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-55</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Attenuation">
-							<Custom CreatedFrom="{A6531B20-A358-46ED-82CE-7272C985064B}">
-								<Attenuation Name="EnableAtt (Custom)" ID="{6190995A-3CE3-46C1-B9BF-FC4FCA069251}" ShortID="241531796">
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="EnableAtt" ID="{A6531B20-A358-46ED-82CE-7272C985064B}" WorkUnitID="{E1738B0E-FA1C-43E8-BC2D-3CDF29D74D95}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX" ID="{8AC5DE11-95FB-47AE-8882-0BDDBA73CAAD}" WorkUnitID="{BD3573F6-C4E9-43D4-8D14-91B27BD72E6B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Enemy_Death" ID="{1659E6C0-0DBA-49F3-AF91-764AC26E1F5D}" ShortID="46531649">
 									<PropertyList>
-										<Property Name="RadiusMax" Type="Real64" Value="15"/>
+										<Property Name="3DSpatialization" Type="int16" Value="1"/>
+										<Property Name="OutputBusHighpass" Type="int16">
+											<ValueList>
+												<Value>32</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OutputBusVolume" Type="Real64">
+											<ValueList>
+												<Value>-18</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{AA60C743-BC5A-4DB4-9DC6-5169C63A19E7}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="227"/>
+															<Property Name="Min" Type="Real64" Value="-1364"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-15</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
-									<CurveUsageInfoList>
-										<VolumeDryUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
-												<Curve Name="VolumeDry" ID="{2788F236-9791-4077-9B66-1C0BCCB4636B}">
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="EnableAtt" ID="{A6531B20-A358-46ED-82CE-7272C985064B}" WorkUnitID="{E1738B0E-FA1C-43E8-BC2D-3CDF29D74D95}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+											<ObjectRef Name="Chipmunk" ID="{54F9F04F-0D14-46AB-B38B-21CFD2EB46F6}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="Effect1" PluginName="Wwise Delay" CompanyID="0" PluginID="106" PluginType="3">
+											<ObjectRef Name="Echoes_Linear" ID="{D20F3717-EBA2-4E3A-84F8-C8BD431563FB}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BD3573F6-C4E9-43D4-8D14-91B27BD72E6B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_wall" ID="{8D044392-8033-4D3B-912E-B94929529509}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0520258064516132"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0520258064516132"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.113156129032258"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_wall.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="523844905"/>
+											</MediaIDList>
+										</AudioFileSource>
+										<AudioFileSource Name="Explosion8bit" ID="{3730B4BE-28ED-4AD8-9EA1-CC8E1C830531}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.052248652803079"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.122457780007216"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.235118937613855"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Explosion8bit.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="529159546"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Explosion8bit" ID="{3730B4BE-28ED-4AD8-9EA1-CC8E1C830531}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MachineGun" ID="{48AB512A-6092-487E-B4CD-094ED7FE9B56}" ShortID="286956494">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="1"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-280</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{71122946-6886-4D32-B942-524EE7A390B6}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-55</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<Custom CreatedFrom="{A6531B20-A358-46ED-82CE-7272C985064B}">
+												<Attenuation Name="EnableAtt (Custom)" ID="{6190995A-3CE3-46C1-B9BF-FC4FCA069251}" ShortID="241531796">
 													<PropertyList>
-														<Property Name="Flags" Type="int32" Value="3"/>
+														<Property Name="RadiusMax" Type="Real64" Value="15"/>
 													</PropertyList>
-													<PointList>
-														<Point>
-															<XPos>0</XPos>
-															<YPos>0</YPos>
-															<Flags>5</Flags>
-														</Point>
-														<Point>
-															<XPos>14.999</XPos>
-															<YPos>0</YPos>
-															<Flags>0</Flags>
-														</Point>
-														<Point>
-															<XPos>15</XPos>
-															<YPos>-200</YPos>
-															<Flags>37</Flags>
-														</Point>
-													</PointList>
-												</Curve>
-											</CurveUsageInfo>
-										</VolumeDryUsage>
-										<VolumeWetGameUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
-										</VolumeWetGameUsage>
-										<VolumeWetUserUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
-										</VolumeWetUserUsage>
-										<LowPassFilterUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-										</LowPassFilterUsage>
-										<HighPassFilterUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-										</HighPassFilterUsage>
-										<SpreadUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-										</SpreadUsage>
-										<FocusUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-										</FocusUsage>
-										<ObstructionVolumeUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
-										</ObstructionVolumeUsage>
-										<ObstructionLPFUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
-										</ObstructionLPFUsage>
-										<ObstructionHPFUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
-										</ObstructionHPFUsage>
-										<OcclusionVolumeUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
-										</OcclusionVolumeUsage>
-										<OcclusionLPFUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
-										</OcclusionLPFUsage>
-										<OcclusionHPFUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
-										</OcclusionHPFUsage>
-										<DiffractionVolumeUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
-										</DiffractionVolumeUsage>
-										<DiffractionLPFUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
-										</DiffractionLPFUsage>
-										<DiffractionHPFUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
-										</DiffractionHPFUsage>
-										<TransmissionVolumeUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
-										</TransmissionVolumeUsage>
-										<TransmissionLPFUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
-										</TransmissionLPFUsage>
-										<TransmissionHPFUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
-										</TransmissionHPFUsage>
-									</CurveUsageInfoList>
-								</Attenuation>
-							</Custom>
-						</Reference>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
-						</Reference>
-						<Reference Name="Effect0">
-							<Custom CreatedFrom="{99F80B38-1C45-42CE-9BCD-E94F3885DCAA}">
-								<Effect Name="Monsterize (Custom)" ID="{A8F19D00-84F9-436D-ABB0-C596F31E3005}" ShortID="542053558" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+													<CurveUsageInfoList>
+														<VolumeDryUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+																<Curve Name="VolumeDry" ID="{2788F236-9791-4077-9B66-1C0BCCB4636B}">
+																	<PropertyList>
+																		<Property Name="Flags" Type="int32" Value="3"/>
+																	</PropertyList>
+																	<PointList>
+																		<Point>
+																			<XPos>0</XPos>
+																			<YPos>0</YPos>
+																			<Flags>5</Flags>
+																		</Point>
+																		<Point>
+																			<XPos>14.999</XPos>
+																			<YPos>0</YPos>
+																			<Flags>0</Flags>
+																		</Point>
+																		<Point>
+																			<XPos>15</XPos>
+																			<YPos>-200</YPos>
+																			<Flags>37</Flags>
+																		</Point>
+																	</PointList>
+																</Curve>
+															</CurveUsageInfo>
+														</VolumeDryUsage>
+														<VolumeWetGameUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+														</VolumeWetGameUsage>
+														<VolumeWetUserUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+														</VolumeWetUserUsage>
+														<LowPassFilterUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+														</LowPassFilterUsage>
+														<HighPassFilterUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+														</HighPassFilterUsage>
+														<SpreadUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+														</SpreadUsage>
+														<FocusUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+														</FocusUsage>
+														<ObstructionVolumeUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+														</ObstructionVolumeUsage>
+														<ObstructionLPFUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+														</ObstructionLPFUsage>
+														<ObstructionHPFUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+														</ObstructionHPFUsage>
+														<OcclusionVolumeUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+														</OcclusionVolumeUsage>
+														<OcclusionLPFUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+														</OcclusionLPFUsage>
+														<OcclusionHPFUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+														</OcclusionHPFUsage>
+														<DiffractionVolumeUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+														</DiffractionVolumeUsage>
+														<DiffractionLPFUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+														</DiffractionLPFUsage>
+														<DiffractionHPFUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+														</DiffractionHPFUsage>
+														<TransmissionVolumeUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+														</TransmissionVolumeUsage>
+														<TransmissionLPFUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+														</TransmissionLPFUsage>
+														<TransmissionHPFUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+														</TransmissionHPFUsage>
+													</CurveUsageInfoList>
+												</Attenuation>
+											</Custom>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
+										</Reference>
+										<Reference Name="Effect0">
+											<Custom CreatedFrom="{99F80B38-1C45-42CE-9BCD-E94F3885DCAA}">
+												<Effect Name="Monsterize (Custom)" ID="{A8F19D00-84F9-436D-ABB0-C596F31E3005}" ShortID="542053558" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+													<PropertyList>
+														<Property Name="FilterFrequency" Type="Real32" Value="2000"/>
+														<Property Name="Pitch" Type="Real32" Value="-2000"/>
+													</PropertyList>
+												</Effect>
+											</Custom>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BD3573F6-C4E9-43D4-8D14-91B27BD72E6B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="77245__studiocopsey__power-up" ID="{FA96B4DF-4F2B-45AA-8CDA-63394432F804}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0166808368758856"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.128384596149037"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.214783695923981"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>77245__studiocopsey__power-up.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="136212208"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="77245__studiocopsey__power-up" ID="{FA96B4DF-4F2B-45AA-8CDA-63394432F804}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="XP_PickUp" ID="{63846322-DC54-4AC4-ABB2-F0FC86438964}" ShortID="235128237">
 									<PropertyList>
-										<Property Name="FilterFrequency" Type="Real32" Value="2000"/>
-										<Property Name="Pitch" Type="Real32" Value="-2000"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{513E84DE-B385-4F3D-9CD1-727769C03539}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="227"/>
+															<Property Name="Min" Type="Real64" Value="-1137"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-52</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
-								</Effect>
-							</Custom>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BD3573F6-C4E9-43D4-8D14-91B27BD72E6B}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="77245__studiocopsey__power-up" ID="{FA96B4DF-4F2B-45AA-8CDA-63394432F804}">
-							<PropertyList>
-								<Property Name="FadeInDuration" Type="Real64" Value="0.0166808368758856"/>
-								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-								<Property Name="TrimBegin" Type="Real64" Value="0.128384596149037"/>
-								<Property Name="TrimEnd" Type="Real64" Value="0.214783695923981"/>
-							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>77245__studiocopsey__power-up.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="136212208"/>
-							</MediaIDList>
-						</AudioFileSource>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BD3573F6-C4E9-43D4-8D14-91B27BD72E6B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="77245__studiocopsey__power-up" ID="{CEDBEEE1-8B3C-4F43-9608-424324879B7E}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0806579972230687"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.145424836601307"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.145424836601307"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>77245__studiocopsey__power-up.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="306663159"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="77245__studiocopsey__power-up" ID="{CEDBEEE1-8B3C-4F43-9608-424324879B7E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</ActorMixer>
 					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="77245__studiocopsey__power-up" ID="{FA96B4DF-4F2B-45AA-8CDA-63394432F804}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="Enemy_Death" ID="{1659E6C0-0DBA-49F3-AF91-764AC26E1F5D}" ShortID="46531649">
-					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="1"/>
-						<Property Name="OutputBusHighpass" Type="int16">
-							<ValueList>
-								<Value>32</Value>
-							</ValueList>
-						</Property>
-						<Property Name="OutputBusVolume" Type="Real64">
-							<ValueList>
-								<Value>-18</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Pitch" Type="int32">
-							<ModifierList>
-								<ModifierInfo>
-									<Modifier Name="" ID="{AA60C743-BC5A-4DB4-9DC6-5169C63A19E7}">
-										<PropertyList>
-											<Property Name="Enabled" Type="bool" Value="True"/>
-											<Property Name="Max" Type="Real64" Value="227"/>
-											<Property Name="Min" Type="Real64" Value="-1364"/>
-										</PropertyList>
-									</Modifier>
-								</ModifierInfo>
-							</ModifierList>
-						</Property>
-						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="EnableAtt" ID="{A6531B20-A358-46ED-82CE-7272C985064B}" WorkUnitID="{E1738B0E-FA1C-43E8-BC2D-3CDF29D74D95}"/>
-						</Reference>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
-						</Reference>
-						<Reference Name="Effect0" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
-							<ObjectRef Name="Chipmunk" ID="{54F9F04F-0D14-46AB-B38B-21CFD2EB46F6}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-						</Reference>
-						<Reference Name="Effect1" PluginName="Wwise Delay" CompanyID="0" PluginID="106" PluginType="3">
-							<ObjectRef Name="Echoes_Linear" ID="{D20F3717-EBA2-4E3A-84F8-C8BD431563FB}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BD3573F6-C4E9-43D4-8D14-91B27BD72E6B}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="sfx_wall" ID="{8D044392-8033-4D3B-912E-B94929529509}">
-							<PropertyList>
-								<Property Name="FadeInDuration" Type="Real64" Value="0.0520258064516132"/>
-								<Property Name="FadeOutDuration" Type="Real64" Value="0.0520258064516132"/>
-								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-								<Property Name="TrimEnd" Type="Real64" Value="0.113156129032258"/>
-							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>sfx_wall.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="523844905"/>
-							</MediaIDList>
-						</AudioFileSource>
-						<AudioFileSource Name="Explosion8bit" ID="{3730B4BE-28ED-4AD8-9EA1-CC8E1C830531}">
-							<PropertyList>
-								<Property Name="FadeOutDuration" Type="Real64" Value="0.052248652803079"/>
-								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-								<Property Name="TrimBegin" Type="Real64" Value="0.122457780007216"/>
-								<Property Name="TrimEnd" Type="Real64" Value="0.235118937613855"/>
-							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>Explosion8bit.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="529159546"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Explosion8bit" ID="{3730B4BE-28ED-4AD8-9EA1-CC8E1C830531}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
