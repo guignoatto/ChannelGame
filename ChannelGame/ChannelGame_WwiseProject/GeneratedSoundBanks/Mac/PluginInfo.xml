@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PluginInfo Platform="Mac" BasePlatform="Mac">
 	<PluginLibs>
+		<PluginLib LibName="Wwise Matrix Reverb" LibId="7536643" Type="Effect" DLL="AkMatrixReverb" StaticLib="AkMatrixReverbFX"/>
+		<PluginLib LibName="Wwise Tremolo" LibId="8585219" Type="Effect" DLL="AkTremolo" StaticLib="AkTremoloFX"/>
 		<PluginLib LibName="System" LibId="11403271" Type="AudioDevice"/>
 		<PluginLib LibName="No Output" LibId="11862023" Type="AudioDevice"/>
 	</PluginLibs>
-	<FileHash>{2DF3E370-A572-513D-8013-5B6E63623995}</FileHash>
+	<FileHash>{097FFC7C-11F8-2B99-38DC-71DB72893AFF}</FileHash>
 </PluginInfo>

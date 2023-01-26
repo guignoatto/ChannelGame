@@ -36,6 +36,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Shot_360Beat" ID="{DB9B79F1-6863-4270-9DF7-704A2D053F40}">
+					<ChildrenList>
+						<Action Name="" ID="{7A30ABAB-7DB9-42C6-8660-4BAFD84D4CB6}" ShortID="1013456255">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="360Beat" ID="{9BAD4549-D0F1-452E-82EC-36C103EC4956}" WorkUnitID="{54E29680-853C-46B4-AAB7-78E8FFB87F64}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

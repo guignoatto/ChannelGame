@@ -16,7 +16,7 @@ public class ChangeVolume : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -47,6 +47,7 @@ public class ChangeVolume : MonoBehaviour
 
         if (whatValue == "SFX")
         {
+            
             SFXVolume = thisSlider.value;
             AkSoundEngine.SetRTPCValue("SFXVolume", SFXVolume);
             setSFXLab();
