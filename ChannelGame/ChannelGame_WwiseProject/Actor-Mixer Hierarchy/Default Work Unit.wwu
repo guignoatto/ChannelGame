@@ -10,7 +10,7 @@
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>12</Value>
+										<Value>5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -124,7 +124,7 @@
 										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-55</Value>
+												<Value>-65</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -302,6 +302,101 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="77245__studiocopsey__power-up" ID="{CEDBEEE1-8B3C-4F43-9608-424324879B7E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="360Beat" ID="{9BAD4549-D0F1-452E-82EC-36C103EC4956}" ShortID="619034603">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>40</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>300</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-15</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
+											<ObjectRef Name="Medium_Room1" ID="{71B802A7-03E2-4998-B241-B2B84FE9DDFF}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="Effect1" PluginName="Wwise Tremolo" CompanyID="0" PluginID="131" PluginType="3">
+											<ObjectRef Name="Fast_LF_Tremolo" ID="{3B09A271-D9D4-4A4E-B545-F681E8313E5F}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BD3573F6-C4E9-43D4-8D14-91B27BD72E6B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Heat Beat 1" ID="{F178A082-BE1E-409F-BCF8-67E4CDF1B272}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.206771615381904"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.463992662695475"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Heat Beat 1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="727606903"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Heat Beat 1" ID="{F178A082-BE1E-409F-BCF8-67E4CDF1B272}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Lighsaber" ID="{1364C78E-83C4-4729-B9BF-B7E79676427D}" ShortID="117941898">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BD3573F6-C4E9-43D4-8D14-91B27BD72E6B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Lighsaber" ID="{8F101445-6B0D-4B07-B2B9-EBD95402DA31}">
+											<Language>SFX</Language>
+											<AudioFile>Lighsaber.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="26796485"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Lighsaber" ID="{8F101445-6B0D-4B07-B2B9-EBD95402DA31}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Lightsaber2" ID="{27E9388B-AFF5-460A-98B5-441FD8B6975B}" ShortID="203976916">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BD3573F6-C4E9-43D4-8D14-91B27BD72E6B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Lightsaber2" ID="{EE14C8BE-0B66-44DE-A65D-BFEF7955E7A4}">
+											<Language>SFX</Language>
+											<AudioFile>Lightsaber2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="788626088"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Lightsaber2" ID="{EE14C8BE-0B66-44DE-A65D-BFEF7955E7A4}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>

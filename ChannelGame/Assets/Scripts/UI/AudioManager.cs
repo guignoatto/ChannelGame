@@ -10,16 +10,19 @@ public class AudioManager : MonoBehaviour
         if (PlayerPrefs.HasKey("MasterVolume"))
         {
             AkSoundEngine.SetRTPCValue("MasterVolume", PlayerPrefs.GetFloat("MasterVolume"));
+            //Debug.Log(PlayerPrefs.GetFloat("MasterVolume"));
         }
 
         if (PlayerPrefs.HasKey("MusicVolume"))
         {
             AkSoundEngine.SetRTPCValue("MusicVolume", PlayerPrefs.GetFloat("MusicVolume"));
+            //Debug.Log(PlayerPrefs.GetFloat("MusicVolume"));
         }
 
         if (PlayerPrefs.HasKey("SFXVolume"))
         {
             AkSoundEngine.SetRTPCValue("SFXVolume", PlayerPrefs.GetFloat("SFXVolume"));
+            //Debug.Log(PlayerPrefs.GetFloat("SFXVolume"));
         }
     }
 

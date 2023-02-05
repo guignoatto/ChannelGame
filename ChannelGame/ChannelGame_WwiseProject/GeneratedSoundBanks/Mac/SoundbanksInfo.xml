@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{9C065602-4105-6869-19CD-00FAD82C5A23}">
+		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{2902A853-EA05-73DD-BB06-F81D61D5D549}">
 			<ShortName>MainSoundBank</ShortName>
 			<Path>MainSoundBank.bnk</Path>
 			<Media>
@@ -25,7 +25,21 @@
 					<ShortName>Explosion8bit.wav</ShortName>
 					<CachePath>SFX/Explosion8bit_3941A393.wem</CachePath>
 				</File>
+				<File Id="727606903" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Heat Beat 1.wav</ShortName>
+					<CachePath>SFX/Heat Beat 1_AFD4E1B7.wem</CachePath>
+				</File>
+				<File Id="1060993490" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Menu.wav</ShortName>
+					<CachePath>SFX/Menu_D79FB2B7.wem</CachePath>
+				</File>
 			</Media>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="1904434771" Name="Medium_Room1" LibName="Wwise Matrix Reverb" LibId="7536643"/>
+					<Plugin Id="3354577677" Name="Fast_LF_Tremolo" LibName="Wwise Tremolo" LibId="8585219"/>
+				</ShareSets>
+			</Plugins>
 			<Events>
 				<Event Id="1205999388" Name="Enemy_Death" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.09881648" DurationMax="0.24771082">
 					<MediaRefs>
@@ -37,6 +51,17 @@
 						<MediaRef Id="306663159"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1209502985" Name="Shot_360Beat" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.21629626" DurationMax="0.21629626">
+					<MediaRefs>
+						<MediaRef Id="727606903"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="1904434771"/>
+							<PluginRef Id="3354577677"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
 				<Event Id="4191302951" Name="Shot_MachineGun" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.10156628" DurationMax="0.10156628">
 					<MediaRefs>
 						<MediaRef Id="136212208"/>
@@ -44,7 +69,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{DBABE6E6-91D3-D99A-4CF6-53CCB3994CBE}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{C2AFFFDC-D966-9780-7ACF-EAF6AE74A951}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -65,5 +90,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{233A4BB3-CC2C-B6D4-7A02-29C4BD941E0B}</FileHash>
+	<FileHash>{E9F7570E-9662-5AAD-11C0-23F125ED1EB0}</FileHash>
 </SoundBanksInfo>
