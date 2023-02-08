@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private PlayerExperience _playerExperience;
     private PlayerMagneticField _playerMagneticField;
     private PlayerView _playerView;
+    private PlayerHealth _playerHealth;
     private List<SkillBase> _mySkills;
 
     public void GetNewEnemyList(List<EnemyBase> newEnemyList)
@@ -27,15 +28,19 @@ public class PlayerController : MonoBehaviour
         _playerExperience = GetComponent<PlayerExperience>();
         _playerMagneticField = GetComponentInChildren<PlayerMagneticField>();
         _playerView = GetComponent<PlayerView>();
+        _playerHealth = GetComponent<PlayerHealth>();
 
+        _playerHealth.Initialize();
+        
         SetEventHandlers();
     }
-
+    
     private void SetEventHandlers()
     {
         _playerExperience.LevelUpEvent += LevelUpEventHandler;
         _playerMovement.PlayerStop += PlayerStopHandler;
         _playerMovement.PlayerWalk += PlayerWalkHandler;
+        _playerHealth.OnTakeDamage += TakeDamageHandler;
     }
 
     private void LevelUpEventHandler()
@@ -51,5 +56,10 @@ public class PlayerController : MonoBehaviour
     private void PlayerWalkHandler()
     {
         _playerView.SetWalkingAnimation();
+    }
+
+    private void TakeDamageHandler(float health, float totalHealth)
+    {
+        _playerView.TakeDamageHandler(health, totalHealth);
     }
 }
