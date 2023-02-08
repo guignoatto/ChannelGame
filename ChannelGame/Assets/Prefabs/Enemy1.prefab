@@ -447,6 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experience: {fileID: 6919287380235992177, guid: 0b0e8b4ecd1f27a4cad47b6464e4335e, type: 3}
+  DeathParticle: {fileID: 560147315048620767, guid: 41e1c62137f0fd94b83761a2df4837c0, type: 3}
   life: 100
   _speed: 2
   _damage: 0

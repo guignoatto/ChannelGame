@@ -9,8 +9,8 @@ using UnityEngine;
 public class EnemyBase : MonoBehaviour
 {
     public Action<EnemyBase> returnToPool;
-    
-    [SerializeField] private GameObject experience;
+
+    [SerializeField] private GameObject experience, DeathParticle;
     [SerializeField] private float life;
     [SerializeField] private float _speed;
     [SerializeField] private float _damage;
@@ -52,6 +52,7 @@ public class EnemyBase : MonoBehaviour
         if (life <= 0)
         {
             Instantiate(experience,transform.position,experience.transform.rotation);
+            Instantiate(DeathParticle, transform.position, DeathParticle.transform.rotation);
             life = maxLife;
             _enemyView.UpdateHealthBar(life/maxLife);
             returnToPool?.Invoke(this);

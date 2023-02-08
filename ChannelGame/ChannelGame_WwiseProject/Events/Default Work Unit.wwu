@@ -47,6 +47,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Shot_Lightsaber" ID="{1A3646D0-337F-4251-85B9-916EF0EF8EE8}">
+					<ChildrenList>
+						<Action Name="" ID="{29DB3D41-6684-4C75-B808-A3A8B79BB579}" ShortID="804516200">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="LightSaber" ID="{E921F016-2ECD-4E6A-8B53-B27CC98F9259}" WorkUnitID="{54E29680-853C-46B4-AAB7-78E8FFB87F64}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

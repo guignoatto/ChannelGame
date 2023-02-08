@@ -55,7 +55,7 @@
 										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-15</Value>
+												<Value>-20</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -355,7 +355,27 @@
 										<ActiveSource Name="Heat Beat 1" ID="{F178A082-BE1E-409F-BCF8-67E4CDF1B272}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="Lighsaber" ID="{1364C78E-83C4-4729-B9BF-B7E79676427D}" ShortID="117941898">
+								<RandomSequenceContainer Name="LightSaber" ID="{E921F016-2ECD-4E6A-8B53-B27CC98F9259}" ShortID="817497604">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{817CDF5C-24AA-4364-90A7-DD20188BC38B}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="177"/>
+															<Property Name="Min" Type="Real64" Value="-52"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-15</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
@@ -365,40 +385,143 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="Lighsaber" ID="{8F101445-6B0D-4B07-B2B9-EBD95402DA31}">
-											<Language>SFX</Language>
-											<AudioFile>Lighsaber.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="26796485"/>
-											</MediaIDList>
-										</AudioFileSource>
+										<Sound Name="Lightsaber1" ID="{45BA0513-1A47-4577-B8E5-3CED8F6BFC72}" ShortID="238592984">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="1"/>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>60</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="EnableAtt" ID="{A6531B20-A358-46ED-82CE-7272C985064B}" WorkUnitID="{E1738B0E-FA1C-43E8-BC2D-3CDF29D74D95}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{8AC5DE11-95FB-47AE-8882-0BDDBA73CAAD}" WorkUnitID="{BD3573F6-C4E9-43D4-8D14-91B27BD72E6B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Lightsaber2" ID="{BBAE40AC-C329-43D6-9579-6621723F1222}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.140433488310063"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.452124345541402"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="1.81017477992679"/>
+														<Property Name="TrimEnd" Type="Real64" Value="2.45136221157603"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Lightsaber2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="573671361"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Lightsaber2" ID="{BBAE40AC-C329-43D6-9579-6621723F1222}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Lightsaber2" ID="{27E9388B-AFF5-460A-98B5-441FD8B6975B}" ShortID="203976916">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="1"/>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>60</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="EnableAtt" ID="{A6531B20-A358-46ED-82CE-7272C985064B}" WorkUnitID="{E1738B0E-FA1C-43E8-BC2D-3CDF29D74D95}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{8AC5DE11-95FB-47AE-8882-0BDDBA73CAAD}" WorkUnitID="{BD3573F6-C4E9-43D4-8D14-91B27BD72E6B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Lightsaber2" ID="{EE14C8BE-0B66-44DE-A65D-BFEF7955E7A4}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.176760962495649"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.452124345541402"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.812066284930264"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.41302744549254"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Lightsaber2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="788626088"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Lightsaber2" ID="{EE14C8BE-0B66-44DE-A65D-BFEF7955E7A4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Lightsaber3" ID="{05B92F96-C222-478D-AABC-115622A1BA45}" ShortID="8000319">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="1"/>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>60</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="EnableAtt" ID="{A6531B20-A358-46ED-82CE-7272C985064B}" WorkUnitID="{E1738B0E-FA1C-43E8-BC2D-3CDF29D74D95}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{8AC5DE11-95FB-47AE-8882-0BDDBA73CAAD}" WorkUnitID="{BD3573F6-C4E9-43D4-8D14-91B27BD72E6B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Lightsaber2" ID="{3466F5EB-8056-4FA7-B5C8-784B81C69E26}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.290111208846092"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.720321488165292"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="13.725183169286"/>
+														<Property Name="TrimEnd" Type="Real64" Value="14.4894609012158"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Lightsaber2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="267298187"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Lightsaber2" ID="{3466F5EB-8056-4FA7-B5C8-784B81C69E26}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Lighsaber" ID="{8F101445-6B0D-4B07-B2B9-EBD95402DA31}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Lightsaber2" ID="{27E9388B-AFF5-460A-98B5-441FD8B6975B}" ShortID="203976916">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BD3573F6-C4E9-43D4-8D14-91B27BD72E6B}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Lightsaber2" ID="{EE14C8BE-0B66-44DE-A65D-BFEF7955E7A4}">
-											<Language>SFX</Language>
-											<AudioFile>Lightsaber2.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="788626088"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Lightsaber2" ID="{EE14C8BE-0B66-44DE-A65D-BFEF7955E7A4}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
+								</RandomSequenceContainer>
 							</ChildrenList>
 						</ActorMixer>
 					</ChildrenList>
