@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.PlayerLoop;
 using Random = UnityEngine.Random;
 
-public class EnemyManager : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
 {
    public Action<List<EnemyBase>> RefreshEnemyList;
 
