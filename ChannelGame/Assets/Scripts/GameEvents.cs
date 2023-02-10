@@ -7,13 +7,13 @@ public class GameEvents : MonoBehaviour
 {
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private SkillPickManager _skillPickManager;
-    [SerializeField] private EnemySpawner enemySpawner;
+    [SerializeField] private WaveManager _waveManager;
 
     private void Awake()
     {
         _skillPickManager.Initialize();
         _playerController.Initialize();
-        enemySpawner.Initialize();
+        _waveManager.Initialize();
 
         _playerController.LevelUpEvent += OnLevelUpHandler;
         _skillPickManager.NewSkillInstantiated += NewSkillInstantiatedHandler;
@@ -26,6 +26,6 @@ public class GameEvents : MonoBehaviour
 
     private void NewSkillInstantiatedHandler(SkillBase newSkill)
     {
-        enemySpawner.RefreshEnemyList += newSkill.RefreshEnemyList;
+        _waveManager.RefreshEnemyList += newSkill.RefreshEnemyList;
     }
 }

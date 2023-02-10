@@ -345,7 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerController: {fileID: 43203733}
   _skillPickManager: {fileID: 53123493}
-  _enemyManager: {fileID: 763184265}
+  _waveManager: {fileID: 763184266}
 --- !u!4 &114051185
 Transform:
   m_ObjectHideFlags: 0
@@ -1807,6 +1807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 763184264}
+  - component: {fileID: 763184266}
   - component: {fileID: 763184265}
   m_Layer: 0
   m_Name: EnemyManager
@@ -1851,8 +1852,21 @@ MonoBehaviour:
   - {fileID: 1847846825}
   - {fileID: 1007103326}
   - {fileID: 1097208237}
-  _spawnCooldown: 0.7
-  _maxEnemies: 50
+--- !u!114 &763184266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763184263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add60585cab5dd94ea89c2a7b2d1cba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemySpawner: {fileID: 763184265}
+  _waveConfig: {fileID: 11400000, guid: f92214a550b44b445b43d2bc743296cf, type: 2}
+  maxTime: 1200
 --- !u!1 &770830001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2920,8 +2934,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 493d3304337f7754e82a71103e3c982a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleePoolCount: 100
   meleeEnemyPrefab: {fileID: 8823166147242721597, guid: 6e2fd2633d6f5c242ae6dbf7d299bad6, type: 3}
+  meleePoolCount: 100
+  rangedEnemyPrefab: {fileID: 0}
+  rangedPoolCount: 0
 --- !u!4 &1334046585
 Transform:
   m_ObjectHideFlags: 0

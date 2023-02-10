@@ -2,42 +2,56 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Windows.WebCam;
 
 public class WaveManager : MonoBehaviour
-{
+{   
+    public Action<List<EnemyBase>> RefreshEnemyList;
+
     [SerializeField] private EnemySpawner _enemySpawner;
-    [SerializeField] private List<WaveConfig> _waveConfig;
+    [SerializeField] private WaveConfig _waveConfig;
     [SerializeField] private float maxTime = 1200;
 
     private IEnumerator spawnEnemiesCoroutine;
     
-    private float timer;
-    private int wave = 1;
+    [SerializeField]private float timer;
+    private int wave = 0;
 
-    private void Initialize()
+    public void Initialize()
     {
-        spawnEnemiesCoroutine = SpawnEnemies(_waveConfig[wave].frequency);
-        StartCoroutine(spawnEnemiesCoroutine);
+        _enemySpawner.Initialize();
+        _enemySpawner.RefreshEnemyList += RefreshEnemyListHandler;
+        
+        foreach (var tEnemyConfig in _waveConfig.SingleWaveConfig[wave].EnemyConfig)
+        {
+            StartCoroutine(SpawnEnemies(tEnemyConfig.EnemyType, tEnemyConfig.Frequency));
+        }
     }
     private void Update()
     {
         timer += Time.deltaTime;
-        if (timer > (maxTime / _waveConfig.Count) * wave)
+        if (timer > (maxTime / _waveConfig.SingleWaveConfig.Count) * (wave + 1))
         {
+            StopAllCoroutines();
+
             wave += 1;
-            
-            StopCoroutine(spawnEnemiesCoroutine);
-            
-            spawnEnemiesCoroutine = SpawnEnemies(_waveConfig[wave].frequency);
-            StartCoroutine(spawnEnemiesCoroutine);
+            foreach (var tEnemyConfig in _waveConfig.SingleWaveConfig[wave].EnemyConfig)
+            {
+                StartCoroutine(SpawnEnemies(tEnemyConfig.EnemyType, tEnemyConfig.Frequency));
+            }
+
         }
     }
-    private IEnumerator SpawnEnemies(float frequency)
+    private IEnumerator SpawnEnemies(IEnemyType enemyType, float frequency)
     {
         while (true)
         {
+            _enemySpawner.InstantiateEnemy(enemyType);
             yield return new WaitForSeconds(frequency);
         }
+    }
+
+    public void RefreshEnemyListHandler(List<EnemyBase> enemiesList)
+    {
+        RefreshEnemyList?.Invoke(enemiesList);
     }
 }

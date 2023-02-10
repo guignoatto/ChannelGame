@@ -6,13 +6,19 @@ using UnityEngine;
 public class EnemyPool : MonoBehaviour
 {
     public Action<EnemyBase> onReturnToPool;
-    [SerializeField] private int meleePoolCount;
+    [Header("Melee")]
     [SerializeField] private GameObject meleeEnemyPrefab;
+    [SerializeField] private int meleePoolCount;
+    [Header("Ranged")]
+    [SerializeField] private GameObject rangedEnemyPrefab;
+    [SerializeField] private int rangedPoolCount;
     private List<EnemyBase> availableMeleeEnemies;
+    private List<EnemyBase> availableRangedEnemies;
 
     public void Initialize()
     {
         availableMeleeEnemies = new List<EnemyBase>();
+        availableRangedEnemies = new List<EnemyBase>();
         for (int i = 0; i < meleePoolCount; i++)
         {
             EnemyBase newEnemy = Instantiate(meleeEnemyPrefab, transform).GetComponent<EnemyBase>();
@@ -20,22 +26,25 @@ public class EnemyPool : MonoBehaviour
             newEnemy.gameObject.SetActive(false);
             availableMeleeEnemies.Add(newEnemy);
         }
+        
+        for (int i = 0; i < rangedPoolCount; i++)
+        {
+            EnemyBase newEnemy = Instantiate(rangedEnemyPrefab, transform).GetComponent<EnemyBase>();
+            newEnemy.returnToPool += ReturnRangedEnemyToPool;
+            newEnemy.gameObject.SetActive(false);
+            availableMeleeEnemies.Add(newEnemy);
+        }
     }
-    
-    public EnemyBase GetEnemyMelee()
+    public EnemyBase GetEnemy(IEnemyType enemyType)
     {
-        if (availableMeleeEnemies.Count < 1)
+        List<EnemyBase> enemies = GetListByType(enemyType);
+        if (enemies.Count < 1)
             return null;
-        EnemyBase availableEnemy = availableMeleeEnemies[0];
+        EnemyBase availableEnemy = enemies[0];
         
         availableMeleeEnemies.RemoveAt(0);
         
         return availableEnemy;
-    }
-
-    private GameObject GetEnemyRanged()
-    {
-        return new GameObject();
     }
     private void ReturnMeleeEnemyToPool(EnemyBase enemy)
     {
@@ -43,5 +52,24 @@ public class EnemyPool : MonoBehaviour
         enemy.transform.parent = transform;
         enemy.gameObject.SetActive(false);
         onReturnToPool?.Invoke(enemy);
+    }
+    private void ReturnRangedEnemyToPool(EnemyBase enemy)
+    {
+        availableRangedEnemies.Add(enemy);
+        enemy.transform.parent = transform;
+        enemy.gameObject.SetActive(false);
+        onReturnToPool?.Invoke(enemy);
+    }
+    private List<EnemyBase> GetListByType(IEnemyType enemyType)
+    {
+        switch (enemyType)
+        {
+            case IEnemyType.MELEE:
+                return availableMeleeEnemies;
+            case IEnemyType.RANGED:
+                return availableRangedEnemies;
+            default:
+                return availableMeleeEnemies;
+        }
     }
 }

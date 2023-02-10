@@ -13,11 +13,6 @@ public class EnemySpawner : MonoBehaviour
    [Header("References")]
    [SerializeField] private EnemyPool _enemyPool;
    [SerializeField] private List<Transform> _spawnPoints;
-   [Header("Config")] 
-   [SerializeField]
-   private float _spawnCooldown;
-
-   [SerializeField] private int _maxEnemies = 4;
 
    private List<EnemyBase> _enemyList;
    private float _timer = 0;
@@ -28,12 +23,12 @@ public class EnemySpawner : MonoBehaviour
       _enemyList = new List<EnemyBase>();
       _enemyPool.onReturnToPool += RemoveEnemyFromList;
    }
-   public void InstantiateMeleeEnemy()
+   public void InstantiateEnemy(IEnemyType enemyType)
    {
-      var newEnemy = _enemyPool.GetEnemyMelee();
+      var newEnemy = _enemyPool.GetEnemy(enemyType);
       if (newEnemy is null)
          return;
-      newEnemy.transform.parent = this.transform;
+      newEnemy.transform.parent = transform;
       newEnemy.transform.position = GetRandomSpawnPoint().position;
       
       newEnemy.gameObject.SetActive(true);
@@ -45,16 +40,6 @@ public class EnemySpawner : MonoBehaviour
    {
       return _spawnPoints[Random.Range(0, _spawnPoints.Count)];
    }
-   private void Update()
-   {
-      _timer += Time.deltaTime;
-      if (_timer >= _spawnCooldown && _enemyList.Count < _maxEnemies)
-      {
-         InstantiateMeleeEnemy();
-         _timer = 0;
-      }
-   }
-
    private void RemoveEnemyFromList(EnemyBase enemy)
    {
       _enemyList.Remove(enemy);
