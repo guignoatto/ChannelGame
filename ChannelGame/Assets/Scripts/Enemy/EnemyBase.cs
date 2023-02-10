@@ -66,7 +66,8 @@ public class EnemyBase : MonoBehaviour
         if (life <= 0)
         {
             Instantiate(experience,transform.position,experience.transform.rotation);
-            Instantiate(DeathParticle, transform.position, DeathParticle.transform.rotation);
+            var deathParticle = Instantiate(DeathParticle, transform.position, DeathParticle.transform.rotation);
+            Destroy(deathParticle, 2);
             life = maxLife;
             _enemyView.UpdateHealthBar(life / maxLife);
             returnToPool?.Invoke(this);
