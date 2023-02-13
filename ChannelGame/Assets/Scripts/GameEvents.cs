@@ -17,6 +17,7 @@ public class GameEvents : MonoBehaviour
 
         _playerController.LevelUpEvent += OnLevelUpHandler;
         _skillPickManager.NewSkillInstantiated += NewSkillInstantiatedHandler;
+        _playerController.OnDie += OnDieHandler;
     }
 
     private void OnLevelUpHandler()
@@ -27,5 +28,11 @@ public class GameEvents : MonoBehaviour
     private void NewSkillInstantiatedHandler(SkillBase newSkill)
     {
         _waveManager.RefreshEnemyList += newSkill.RefreshEnemyList;
+    }
+
+    private void OnDieHandler()
+    {
+        //SHOW DEATH SCREEN
+        //END MAP
     }
 }

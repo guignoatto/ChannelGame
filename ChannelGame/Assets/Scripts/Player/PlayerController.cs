@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Action OnDie;
     public Action LevelUpEvent;
     
     private PlayerMovement _playerMovement;
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
         _playerMovement.PlayerStop += PlayerStopHandler;
         _playerMovement.PlayerWalk += PlayerWalkHandler;
         _playerHealth.OnTakeDamage += TakeDamageHandler;
+        _playerHealth.OnPlayerDie += OnDieHandler;
     }
 
     private void LevelUpEventHandler()
@@ -61,5 +63,9 @@ public class PlayerController : MonoBehaviour
     private void TakeDamageHandler(float health, float totalHealth)
     {
         _playerView.TakeDamageHandler(health, totalHealth);
+    }
+    private void OnDieHandler()
+    {
+        OnDie?.Invoke();
     }
 }
