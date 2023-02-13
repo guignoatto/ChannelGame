@@ -32,7 +32,7 @@ public class EnemyPool : MonoBehaviour
             EnemyBase newEnemy = Instantiate(rangedEnemyPrefab, transform).GetComponent<EnemyBase>();
             newEnemy.returnToPool += ReturnRangedEnemyToPool;
             newEnemy.gameObject.SetActive(false);
-            availableMeleeEnemies.Add(newEnemy);
+            availableRangedEnemies.Add(newEnemy);
         }
     }
     public EnemyBase GetEnemy(IEnemyType enemyType)
@@ -42,7 +42,7 @@ public class EnemyPool : MonoBehaviour
             return null;
         EnemyBase availableEnemy = enemies[0];
         
-        availableMeleeEnemies.RemoveAt(0);
+        enemies.RemoveAt(0);
         
         return availableEnemy;
     }

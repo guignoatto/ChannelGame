@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Windows.WebCam;
 
@@ -11,45 +10,42 @@ public class EnemyBase : MonoBehaviour
 {
     public Action<EnemyBase> returnToPool;
 
+    [SerializeField] protected float _speed;
+    
     [SerializeField] private GameObject experience, DeathParticle;
     [SerializeField] private float life;
-    [SerializeField] private float _speed;
     [SerializeField] private float _damage;
 
+    protected PlayerMovement _target;
+    protected Rigidbody2D _rbd;
+    
     private float maxLife;
     private EnemyView _enemyView;
-    private PlayerMovement _target;
-    private Rigidbody2D _rbd;
-
-    private List<ProjectileBase> _projectileCollided = new List<ProjectileBase>();
-
 
     public void TakeDamage(float damage, ProjectileBase projectile)
     {
-        // if (_projectileHited.Contains(projectile))
-        //     return;
-        // _projectileHited.Add(projectile);
         life -= damage;
         _enemyView.UpdateHealthBar(life / maxLife);
+
         CheckDeath();
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         _enemyView = GetComponent<EnemyView>();
-        _target = FindObjectOfType<PlayerMovement>();
         _rbd = GetComponent<Rigidbody2D>();
+        _target = FindObjectOfType<PlayerMovement>();
         maxLife = life;
         _enemyView.Initialize();
     }
-
-    private void FixedUpdate()
+    
+    protected virtual void FixedUpdate()
     {
         var directionToPlayer = (_target.transform.position - transform.position).normalized;
-        _rbd.velocity = new Vector2(directionToPlayer.x, directionToPlayer.y) * _speed * Time.deltaTime;
+        _rbd.velocity = new Vector2(directionToPlayer.x, directionToPlayer.y) * _speed * Time.fixedDeltaTime;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (transform.position.x - _target.transform.position.x < 0)
         {
