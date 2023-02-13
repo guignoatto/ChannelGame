@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public string nextscene;
     public GameObject OptionsScreen;
+    public GameObject SelectScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +21,15 @@ public class MainMenu : MonoBehaviour
     }
     public void StartGame() 
     {
-        SceneManager.LoadScene(nextscene);
+        //SceneManager.LoadScene(nextscene);
+        SelectScreen.SetActive(true);
+
     }
+    public void CloseSelect()
+    {
+        SelectScreen.SetActive(false);
+    }
+
     public void OpenOptions()
     {
         OptionsScreen.SetActive(true);

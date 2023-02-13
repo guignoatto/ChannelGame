@@ -12,44 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03053d7e7a875644ba31b1341b3876a4, type: 3}
   m_Name: Map1Waves
   m_EditorClassIdentifier: 
-  WavesConfig:
+  SingleWaveConfig:
   - FontName: Wave 1
     EnemyConfig:
-    - FontName: Melee Enemy
-      EnemyType: 0
-      Frequency: 1
-    - FontName: Ranged Enemy
-      EnemyType: 1
-      Frequency: 2
-  - FontName: Wave 2
-    EnemyConfig:
-    - FontName: Melee Enemy
-      EnemyType: 0
-      Frequency: 0.8
-    - FontName: Ranged Enemy
-      EnemyType: 1
-      Frequency: 1.7
-  - FontName: Wave 3
-    EnemyConfig:
-    - FontName: Melee Enemy
+    - FontName: Enemy
       EnemyType: 0
       Frequency: 0.5
-    - FontName: Ranged Enemy
-      EnemyType: 1
-      Frequency: 1.4
-  - FontName: Wave 4
-    EnemyConfig:
-    - FontName: Melee Enemy
-      EnemyType: 0
-      Frequency: 1
-    - FontName: Ranged Enemy
-      EnemyType: 1
-      Frequency: 2
-  - FontName: Wave 5
-    EnemyConfig:
-    - FontName: Melee Enemy
-      EnemyType: 0
-      Frequency: 1
-    - FontName: Ranged Enemy
-      EnemyType: 1
-      Frequency: 2

@@ -55,7 +55,7 @@
 										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-20</Value>
+												<Value>-30</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -258,14 +258,18 @@
 								</Sound>
 								<Sound Name="XP_PickUp" ID="{63846322-DC54-4AC4-ABB2-F0FC86438964}" ShortID="235128237">
 									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>25</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Pitch" Type="int32">
 											<ModifierList>
 												<ModifierInfo>
 													<Modifier Name="" ID="{513E84DE-B385-4F3D-9CD1-727769C03539}">
 														<PropertyList>
 															<Property Name="Enabled" Type="bool" Value="True"/>
-															<Property Name="Max" Type="Real64" Value="227"/>
-															<Property Name="Min" Type="Real64" Value="-1137"/>
+															<Property Name="Min" Type="Real64" Value="-1237"/>
 														</PropertyList>
 													</Modifier>
 												</ModifierInfo>
@@ -273,7 +277,7 @@
 										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-52</Value>
+												<Value>-55</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
