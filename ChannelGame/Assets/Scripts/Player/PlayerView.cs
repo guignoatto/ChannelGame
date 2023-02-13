@@ -61,6 +61,8 @@ public class PlayerView : MonoBehaviour
     
     private void UpdateHealthBar(float health, float totalHealth)
     {
+        if (health < 0)
+            return;
         float fillAmount = health / totalHealth;
         _fillLife.fillAmount = fillAmount;
     }

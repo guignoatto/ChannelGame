@@ -15,6 +15,11 @@ MonoBehaviour:
   SingleWaveConfig:
   - FontName: Wave 1
     EnemyConfig:
-    - FontName: Enemy
+    - FontName: Ranged Enemy
+      EnemyType: 1
+      Frequency: 0.8
+  - FontName: Wave 2
+    EnemyConfig:
+    - FontName: Melee Enemy
       EnemyType: 0
       Frequency: 0.5
