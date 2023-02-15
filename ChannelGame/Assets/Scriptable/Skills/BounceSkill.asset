@@ -17,6 +17,7 @@ MonoBehaviour:
   SkillProjectile: {fileID: 1796285060104550414, guid: 23e5f1a03eba50c4795f765a92345036, type: 3}
   SkillType: 6
   skillPickSprite: {fileID: 21300000, guid: 6edbf2ebe27fd9945b18c3dbed005cb9, type: 3}
+  skillLevelConfigBase: {fileID: 11400000, guid: 312d1bb3012c79849a3d7ef04a45e668, type: 2}
   Damage: 30
   Cooldown: 1
   ProjectileSpeed: 70

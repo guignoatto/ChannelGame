@@ -11,11 +11,13 @@ public class SkillPreset : ScriptableObject
     public GameObject SkillProjectile;
     public ISkillType SkillType;
     public Sprite skillPickSprite;
+    public SkillsLevelUpConfigBase skillLevelConfigBase;
     [Header("Base Status")]
     public float Damage;
     public float Cooldown;
     public float ProjectileSpeed;
     public float ProjectileDuration;
+
 
 
 }
