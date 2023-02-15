@@ -1,29 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyDetectionField : MonoBehaviour
 {
     
-    public List<EnemyBase> EnemiesInRange = new List<EnemyBase>();
+    public List<Transform> EnemiesInRange = new List<Transform>();
 
 
     public Transform GetRandomEnemyPosition(Transform t)
     {
         if (EnemiesInRange.Count <= 0)
             return null;
+        var activeEnemies = new List<Transform>(EnemiesInRange);
+        foreach (var enemy in EnemiesInRange)
+        {
+            if (!enemy.gameObject.activeSelf)
+                activeEnemies.Remove(enemy);
+        }
+        var newTarget = activeEnemies[Random.Range(0, activeEnemies.Count)];
         
-        var newTarget = EnemiesInRange[Random.Range(0, EnemiesInRange.Count)].GetComponent<Transform>();
         if (newTarget == t)
         {
-            if(EnemiesInRange.Count == 1)
+            if(activeEnemies.Count == 1)
                 return null;
             
-            var newList = EnemiesInRange.GetRange(0, EnemiesInRange.Count);
-            newList.Remove(t.gameObject.GetComponent<EnemyBase>());
-            if (newList.Count == 1)
-                return newList[0].GetComponent<Transform>();
-            newTarget = newList[Random.Range(0, newList.Count)].GetComponent<Transform>();
+            activeEnemies.Remove(t);
+            if (activeEnemies.Count == 1)
+                return activeEnemies[0];
+            newTarget = activeEnemies[Random.Range(0, activeEnemies.Count)];
         }
 
 
@@ -32,12 +38,11 @@ public class EnemyDetectionField : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!other.isTrigger)
+            return;
         EnemyBase enemy = null;
-        other.TryGetComponent(out enemy);
-        if (enemy != null)
-        {
-            EnemiesInRange.Add(enemy);
-        }
+        if (!other.TryGetComponent(out enemy)) return;
+        EnemiesInRange.Add(enemy.transform);
     }
     
     private void OnTriggerExit2D(Collider2D other)
@@ -46,7 +51,7 @@ public class EnemyDetectionField : MonoBehaviour
         other.TryGetComponent(out enemy);
         if (enemy != null)
         {
-            EnemiesInRange.Remove(enemy);
+            EnemiesInRange.Remove(enemy.transform);
         }
     } 
 }

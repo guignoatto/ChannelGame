@@ -50,7 +50,7 @@ public class ProjectilePool : MonoBehaviour
         }
         projectile = list[0];
         list.RemoveAt(0);
-
+        projectile.gameObject.SetActive(true);
         return projectile;
     }
 
@@ -71,8 +71,8 @@ public class ProjectilePool : MonoBehaviour
     private void ReturnProjectileToPool(ISkillType skillType, ProjectileBase projectile)
     {
         var list = GetListWithType(skillType);
-        projectile.transform.parent = transform;
         projectile.gameObject.SetActive(false);
+        projectile.transform.parent = transform;
         list.Add(projectile);
     }
 

@@ -42,5 +42,6 @@ public class EnemySpawner : MonoBehaviour
    private void RemoveEnemyFromList(EnemyBase enemy)
    {
       _enemyList.Remove(enemy);
+      RefreshEnemyList?.Invoke(_enemyList);
    }
 }

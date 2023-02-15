@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Windows.WebCam;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class EnemyBase : MonoBehaviour
+public class EnemyBase : MonoBehaviour, IEnemy
 {
     public Action<EnemyBase> returnToPool;
 
@@ -22,7 +23,7 @@ public class EnemyBase : MonoBehaviour
     private float maxLife;
     private EnemyView _enemyView;
 
-    public void TakeDamage(float damage, ProjectileBase projectile)
+    public void TakeDamage(float damage)
     {
         life -= damage;
         _enemyView.UpdateHealthBar(life / maxLife);
@@ -42,7 +43,7 @@ public class EnemyBase : MonoBehaviour
     protected virtual void FixedUpdate()
     {
         var directionToPlayer = (_target.transform.position - transform.position).normalized;
-        _rbd.velocity = new Vector2(directionToPlayer.x, directionToPlayer.y) * _speed * Time.fixedDeltaTime;
+        _rbd.velocity = new Vector2(directionToPlayer.x, directionToPlayer.y) * (_speed * Time.fixedDeltaTime);
     }
 
     protected virtual void Update()
@@ -61,7 +62,8 @@ public class EnemyBase : MonoBehaviour
     {
         if (life <= 0)
         {
-            Instantiate(experience,transform.position,experience.transform.rotation);
+            var xp = Instantiate(experience,transform.position,experience.transform.rotation).GetComponent<IExperience>();
+            xp._target = _target.transform;
             var deathParticle = Instantiate(DeathParticle, transform.position, DeathParticle.transform.rotation);
             Destroy(deathParticle, 2);
             life = maxLife;

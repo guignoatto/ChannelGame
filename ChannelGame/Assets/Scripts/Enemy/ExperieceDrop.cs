@@ -3,17 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExperieceDrop : MonoBehaviour
+public class ExperieceDrop : MonoBehaviour, IExperience
 {
     [SerializeField] private float exPoints;
     [SerializeField] private float _speed;
 
+    public Transform _target { get; set; }
+    
     private bool flyToPlayer = false;
-    private Transform _target;
-
-    public void FlyToPlayer(Transform target)
+    
+    private void FlyToPlayer()
     {
-        _target = target;
         flyToPlayer = true;
     }
 
@@ -29,10 +29,15 @@ public class ExperieceDrop : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.TryGetComponent(out PlayerController pc))
+        if (col.gameObject.TryGetComponent(out IMagneticField mf))
+        {
+            FlyToPlayer();
+        }
+        if (col.gameObject.TryGetComponent(out IPlayerExperienceCollector pc))
         {
             pc.GetExperience(exPoints);
             Destroy(gameObject);
         }
     }
+
 }

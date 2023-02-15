@@ -16,10 +16,10 @@ public class Skill360 : SkillBase
         timer = 0;
         _skillSound = GetComponent<SkillSound>();
         _enemyList = FindObjectsOfType<EnemyBase>().ToList();
-        _damage = _skillPreset.Damage;
-        _cooldown = _skillPreset.Cooldown;
-        _projectileSpeed = _skillPreset.ProjectileSpeed;
-        _projectileDuration = _skillPreset.ProjectileDuration;
+        _damage = SkillPreset.Damage;
+        _cooldown = SkillPreset.Cooldown;
+        _projectileSpeed = SkillPreset.ProjectileSpeed;
+        _projectileDuration = SkillPreset.ProjectileDuration;
         Attack360();
     }
 
@@ -36,7 +36,7 @@ public class Skill360 : SkillBase
     {
         foreach (var spawn in _spawnList)
         {
-             timer = 0;
+            timer = 0;
             Attack(spawn);
         }
     }

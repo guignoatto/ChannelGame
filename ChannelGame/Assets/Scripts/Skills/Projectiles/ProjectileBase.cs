@@ -47,9 +47,9 @@ public class ProjectileBase : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D other2D)
     {
-        if (other2D.gameObject.TryGetComponent(out EnemyBase enemy))
+        if (other2D.gameObject.activeSelf && other2D.gameObject.TryGetComponent(out EnemyBase enemy) && other2D.isTrigger)
         {
-            enemy.TakeDamage(_damage, this);
+            enemy.TakeDamage(_damage);
             if (!_multiTarget)
             {
                 StopCoroutine(_projectileLifeCooldown);

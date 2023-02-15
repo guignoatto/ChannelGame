@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -44,14 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ed33ffa430a29b4e97e963052def882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skillPreset: {fileID: 11400000, guid: c6b6dd20ce8ef944480666d118f239fc, type: 2}
+  SkillPreset: {fileID: 0}
+  SkillLevel: 0
   _enemyList: []
   _damage: 0
   _cooldown: 0
   _projectileSpeed: 0
   _projectileDuration: 0
-  _enemyDetectionField: {fileID: 0}
-  _bounces: 10
+  _bounces: 1
 --- !u!61 &4496217023953379750
 BoxCollider2D:
   m_ObjectHideFlags: 0

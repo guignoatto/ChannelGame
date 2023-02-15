@@ -10,7 +10,8 @@ public class SkillBase : MonoBehaviour
 {
     public Action<List<EnemyBase>> OnRefreshEnemies;
     public Func<ISkillType, ProjectileBase> GetProjectile;
-    public SkillPreset _skillPreset;
+    public SkillPreset SkillPreset;
+    public int SkillLevel = 0;
 
     protected EnemyDetectionField _enemyDetectionField;
     
@@ -37,11 +38,15 @@ public class SkillBase : MonoBehaviour
         timer = 0;
         _skillSound = GetComponent<SkillSound>();
         _enemyList = FindObjectsOfType<EnemyBase>().ToList();
-        _damage = _skillPreset.Damage;
-        _cooldown = _skillPreset.Cooldown;
-        _projectileSpeed = _skillPreset.ProjectileSpeed;
-        _projectileDuration = _skillPreset.ProjectileDuration;
+        _damage = SkillPreset.Damage;
+        _cooldown = SkillPreset.Cooldown;
+        _projectileSpeed = SkillPreset.ProjectileSpeed;
+        _projectileDuration = SkillPreset.ProjectileDuration;
         Attack(projectileParentTransform);
+    }
+
+    public virtual void LevelUp()
+    {
     }
     public void SetEnemyDetectionField(EnemyDetectionField enemyDetectionField)
     {
@@ -65,14 +70,12 @@ public class SkillBase : MonoBehaviour
         var nearestEnemy = GetClosestEnemy(_enemyList);
         if (nearestEnemy == null)
             return;
-        ProjectileBase pb = GetProjectile?.Invoke(_skillPreset.SkillType);
-        
-        pb.gameObject.SetActive(true);
+        ProjectileBase pb = GetProjectile?.Invoke(SkillPreset.SkillType);
         pb.NearestEnemy = nearestEnemy;
         pb.ProjectileDuration = _projectileDuration;
         pb.ProjectileSpeed = _projectileSpeed;
         pb.Damage = _damage;
-        pb.Initialize(projectileParent, _skillPreset.SkillType);
+        pb.Initialize(projectileParent, SkillPreset.SkillType);
     }
     protected Transform GetClosestEnemy(List<EnemyBase> enemies)
     {
@@ -90,10 +93,4 @@ public class SkillBase : MonoBehaviour
         }
         return tMin;
     }
-    
-    public float Damage { get => _damage; set => _damage = value; }
-    public float ProjectileDuration { get => _projectileDuration; set => _projectileDuration = value; }
-    public float ProjectileSpeed { get => _projectileSpeed; set => _projectileSpeed = value; }
-    public float Cooldown { get => _cooldown; set => _cooldown = value; }
-    public List<EnemyBase> EnemyList { get => _enemyList; set => _enemyList = value; } 
 }

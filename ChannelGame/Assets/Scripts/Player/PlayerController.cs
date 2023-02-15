@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IPlayerExperienceCollector
 {
     public Action OnDie;
     public Action LevelUpEvent;
@@ -13,16 +13,8 @@ public class PlayerController : MonoBehaviour
     private PlayerMagneticField _playerMagneticField;
     private PlayerView _playerView;
     private PlayerHealth _playerHealth;
-    private List<SkillBase> _mySkills;
+    private PlayerSkillController _playerSkillController;
 
-    public void GetNewEnemyList(List<EnemyBase> newEnemyList)
-    {
-        
-    }
-    public void GetExperience(float xp)
-    {
-        _playerExperience.GetExperiencePoints(xp);
-    }
     public void Initialize()
     {
         _playerMovement = GetComponent<PlayerMovement>();
@@ -34,6 +26,10 @@ public class PlayerController : MonoBehaviour
         _playerHealth.Initialize();
         
         SetEventHandlers();
+    }
+    public void GetExperience(float xp)
+    {
+        _playerExperience.GetExperiencePoints(xp);
     }
     
     private void SetEventHandlers()
