@@ -29,14 +29,14 @@
 				</Property>
 				<Property Name="Game Profiler\Voice Monitor\LastBus" Type="string" Value="{00000000-0000-0000-0000-000000000000}"/>
 				<Property Name="General\LatestLanguage" Type="int32" Value="684519430"/>
-				<Property Name="General\LatestPlatform" Type="string" Value="Mac"/>
+				<Property Name="General\LatestPlatform" Type="string" Value="Windows"/>
 				<Property Name="General\SourceControlPluginID" Type="string" Value="{C403A906-0C19-4ED5-808E-748707065301}"/>
 				<Property Name="GenerateSoundBanks\ShowHierarchy" Type="bool" Value="True"/>
 				<Property Name="GenerateSoundBanks\x64_SelectedLanguages" Type="string" Value="BvDMKA=="/>
 				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value="1ik/5D2wckGV1hcPkzvlMA=="/>
 				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value="/OrZTJqxZk+alnxvKrYOcw=="/>
 				<Property Name="HardwareController\CurrentSession" Type="string" Value="{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}"/>
-				<Property Name="HardwareController\{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}\x64_ActiveGroups_v2" Type="string" Value="baTQxHRQrk2iPzo9hQtvsgEA1H46AAAAwKQWRf5/AAD4KrjL+QEAAAAAAAD5AQAAwKQWRf5/AAAEkh1F/n8AAGDwZN75AQAAAAAAAPkBAAAIAAAAAAAAAKjm1H46AAAAAAAyRf5/AAAfATJF/n8AAAAAMkX+fwAAwKQWRf5/AADApBZF/n8AAPgquMv5AQAAAQAAAGJY4LcPdZFPk8pfGu6hl5sBANR+OgAAAMCkFkX+fwAA+Cq4y/kBAAAAAAAA+QEAAMCkFkX+fwAABJIdRf5/AABg8GTe+QEAAAAAAAD5AQAACAAAAAAAAACo5tR+OgAAAAAAMkX+fwAAHwEyRf5/AAAAADJF/n8AAMCkFkX+fwAAwKQWRf5/AAD4KrjL+QEAAAEAAAA="/>
+				<Property Name="HardwareController\{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}\x64_ActiveGroups_v2" Type="string" Value="Yljgtw91kU+Tyl8a7qGXmwEAzx+iAAAAwKTV3/1/AAAYuMpIJgIAAAAAAAAmAgAAwKTV3/1/AAAEkjPg/X8AAHD3/lEmAgAAAAAAACYCAAAIAAAAAAAAAEjizx+iAAAAAABI4P1/AAAfAUjg/X8AAAAASOD9fwAAwKTV3/1/AADApNXf/X8AABi4ykgmAgAAAQAAAG2k0MR0UK5Noj86PYULb7IBAM8fogAAAMCk1d/9fwAAGLjKSCYCAAAAAAAAJgIAAMCk1d/9fwAABJIz4P1/AABw9/5RJgIAAAAAAAAmAgAACAAAAAAAAABI4s8fogAAAAAASOD9fwAAHwFI4P1/AAAAAEjg/X8AAMCk1d/9fwAAwKTV3/1/AAAYuMpIJgIAAAEAAAA="/>
 				<Property Name="Interactive Music\x64_{7560E9C9-300C-4497-B8B7-BE05DADD9624} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwPwAAAAAAVHBAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="Interactive Music\x64_{E3FFCE14-3860-479F-9F4D-00C19F42379D} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwPwAAAAAAVFBAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>

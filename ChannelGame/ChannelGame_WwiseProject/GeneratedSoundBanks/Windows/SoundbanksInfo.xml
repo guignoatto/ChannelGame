@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{59C07EE0-F299-F278-900F-F9EB3DDB2593}">
+		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{604EF694-84A1-2115-0FF5-AEAF9EFD3CF6}">
 			<ShortName>MainSoundBank</ShortName>
 			<Path>MainSoundBank.bnk</Path>
 			<Media>
@@ -114,5 +114,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{FEE46A0E-7B68-A180-4481-FFBFC0FE30B6}</FileHash>
+	<FileHash>{5F2D619B-BFAA-775F-E671-561506CB3EDE}</FileHash>
 </SoundBanksInfo>

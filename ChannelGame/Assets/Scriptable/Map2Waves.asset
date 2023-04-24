@@ -17,4 +17,4 @@ MonoBehaviour:
     EnemyConfig:
     - FontName: Enemy
       EnemyType: 0
-      Frequency: 1
+      Frequency: 5
