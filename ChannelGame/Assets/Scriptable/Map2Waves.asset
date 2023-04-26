@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03053d7e7a875644ba31b1341b3876a4, type: 3}
   m_Name: Map2Waves
   m_EditorClassIdentifier: 
-  WavesConfig: []
+  SingleWaveConfig:
+  - FontName: Wave1
+    EnemyConfig:
+    - FontName: Enemy
+      EnemyType: 0
+      Frequency: 5

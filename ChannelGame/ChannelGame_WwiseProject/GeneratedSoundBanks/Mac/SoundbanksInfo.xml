@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{A707A150-9286-4D55-D681-60FA2F797C38}">
+		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{604EF694-84A1-2115-0FF5-AEAF9EFD3CF6}">
 			<ShortName>MainSoundBank</ShortName>
 			<Path>MainSoundBank.bnk</Path>
 			<Media>
@@ -63,7 +63,7 @@
 						<MediaRef Id="1060993490"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1598016745" Name="Play_XP_PickUp" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.12755391" DurationMax="0.28045586">
+				<Event Id="1598016745" Name="Play_XP_PickUp" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.14542484" DurationMax="0.29713264">
 					<MediaRefs>
 						<MediaRef Id="306663159"/>
 					</MediaRefs>
@@ -114,5 +114,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{1BCE634F-677A-E0E9-ECFA-D6C2D00BA1FA}</FileHash>
+	<FileHash>{1F79B464-8594-26E9-B914-94536893CCD4}</FileHash>
 </SoundBanksInfo>
