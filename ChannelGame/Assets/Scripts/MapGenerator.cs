@@ -15,27 +15,24 @@ public class MapGenerator : MonoBehaviour
 
     private void Awake()
     {
-        // Move the player to the center of the map
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            Vector3 centerPosition = new Vector3((mapWidth / 2 - 0.5f) * chunkWidth, (mapHeight / 2 - 0.5f) * chunkHeight, 0);
-            player.transform.position = centerPosition;
-        }
+  
     }
     void Start()
     {
         GenerateMap();
     }
+    
 
     void GenerateMap()
     {
+        Vector3 mapCenter = new Vector3((mapWidth - 1) * chunkWidth / 2f, (mapHeight - 1) * chunkHeight / 2f, 0);
+
         // Generate all the regular chunks
         for (int x = -mapWidth / 2; x < mapWidth / 2; x++)
         {
             for (int y = -mapHeight / 2; y < mapHeight / 2; y++)
             {
-                GameObject newChunk = Instantiate(chunks[Random.Range(0, chunks.Length)], new Vector3(x * chunkWidth + mapWidth / 2 * chunkWidth, y * chunkHeight + mapHeight / 2 * chunkHeight, 0), Quaternion.identity);
+                GameObject newChunk = Instantiate(chunks[Random.Range(0, chunks.Length)], new Vector3(x * chunkWidth + mapWidth / 2 * chunkWidth, y * chunkHeight + mapHeight / 2 * chunkHeight, 0) - mapCenter, Quaternion.identity);
                 newChunk.transform.parent = transform;
             }
         }
@@ -43,7 +40,7 @@ public class MapGenerator : MonoBehaviour
         // Generate the first special chunk at a random position
         int randomX = Random.Range(-mapWidth / 2, mapWidth / 2);
         int randomY = Random.Range(-mapHeight / 2, mapHeight / 2);
-        GameObject newSpecialChunk1 = Instantiate(specialChunk1, new Vector3(randomX * chunkWidth + mapWidth / 2 * chunkWidth, randomY * chunkHeight + mapHeight / 2 * chunkHeight, 0), Quaternion.identity);
+        GameObject newSpecialChunk1 = Instantiate(specialChunk1, new Vector3(randomX * chunkWidth + mapWidth / 2 * chunkWidth, randomY * chunkHeight + mapHeight / 2 * chunkHeight, 0) - mapCenter, Quaternion.identity);
         newSpecialChunk1.transform.parent = transform;
 
         // Generate the second special chunk at a different random position
@@ -52,7 +49,7 @@ public class MapGenerator : MonoBehaviour
             randomX = Random.Range(-mapWidth / 2, mapWidth / 2);
             randomY = Random.Range(-mapHeight / 2, mapHeight / 2);
         } while (randomX == newSpecialChunk1.transform.position.x / chunkWidth - mapWidth / 2 && randomY == newSpecialChunk1.transform.position.y / chunkHeight - mapHeight / 2);
-        GameObject newSpecialChunk2 = Instantiate(specialChunk2, new Vector3(randomX * chunkWidth + mapWidth / 2 * chunkWidth, randomY * chunkHeight + mapHeight / 2 * chunkHeight, 0), Quaternion.identity);
+        GameObject newSpecialChunk2 = Instantiate(specialChunk2, new Vector3(randomX * chunkWidth + mapWidth / 2 * chunkWidth, randomY * chunkHeight + mapHeight / 2 * chunkHeight, 0) - mapCenter, Quaternion.identity);
         newSpecialChunk2.transform.parent = transform;
 
        
