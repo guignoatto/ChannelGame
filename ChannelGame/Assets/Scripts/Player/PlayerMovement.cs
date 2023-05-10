@@ -15,9 +15,19 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _moveDirection;
     private bool _sendStop = true;
     private bool _sendWalk = true;
-    
+
+    private Vector2 minMapBounds; 
+    private Vector2 maxMapBounds; 
+
     private void Start()
     {
+
+        MapGenerator mapGenerator = FindObjectOfType<MapGenerator>();
+        float mapWidth = mapGenerator.mapWidth * mapGenerator.chunkWidth;
+        float mapHeight = mapGenerator.mapHeight * mapGenerator.chunkHeight;
+        minMapBounds = new Vector2(-mapWidth / 2f, -mapHeight / 2f);
+        maxMapBounds = new Vector2(mapWidth / 2f, mapHeight / 2f);
+
         _rbd = GetComponent<Rigidbody2D>();
     }
 
@@ -44,5 +54,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        // Clamp the player's position to within the map bounds
+        Vector2 clampedPosition = new Vector2(Mathf.Clamp(transform.position.x, minMapBounds.x, maxMapBounds.x), Mathf.Clamp(transform.position.y, minMapBounds.y, maxMapBounds.y));
+        transform.position = (Vector3)clampedPosition;
     }
 }
