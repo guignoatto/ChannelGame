@@ -377,11 +377,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chunks:
-  - {fileID: 3765410354405196554, guid: 5f52c83ec367119409408ad0b8109945, type: 3}
-  - {fileID: 2431564773665992415, guid: db25b8d14837eae4282710b8b30e9624, type: 3}
+  - {fileID: 2431564773665992415, guid: ff68cffce66b774468bf0a47d6c2facd, type: 3}
+  - {fileID: 2431564773665992415, guid: 18445730daf492b42b1270eb012f1b2d, type: 3}
+  - {fileID: 2431564773665992415, guid: 6616f2eb3ec2390459ebe503cab9cf26, type: 3}
+  - {fileID: 2431564773665992415, guid: cb82cdbae95580742a1ff7cc6c00b151, type: 3}
+  - {fileID: 2431564773665992415, guid: 6a8e994de4c2293448ab5decbd89e4c6, type: 3}
+  - {fileID: 2431564773665992415, guid: 5f09896c0a33bd94a9143444201b849b, type: 3}
+  - {fileID: 2431564773665992415, guid: e23fb2004a2396246be22a78f11a8539, type: 3}
   specialChunks:
-  - {fileID: 2431564773665992415, guid: 1bdc290565493dd4ca07e13df99f8bf7, type: 3}
-  - {fileID: 2431564773665992415, guid: 2dfa5839da8c1cb43aeba9635dc56ba9, type: 3}
+  - {fileID: 2431564773665992415, guid: 6ae7208ef4558c742be2cf8db5276833, type: 3}
+  - {fileID: 2431564773665992415, guid: 6ae7208ef4558c742be2cf8db5276833, type: 3}
   chunkWidth: 20
   chunkHeight: 13
   mapWidth: 10
@@ -1562,7 +1567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8761676766501297196, guid: e086fbda5eca51f4bb4e76069fbadd93, type: 3}
       propertyPath: _speed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8761676766501297197, guid: e086fbda5eca51f4bb4e76069fbadd93, type: 3}
       propertyPath: m_RootOrder
