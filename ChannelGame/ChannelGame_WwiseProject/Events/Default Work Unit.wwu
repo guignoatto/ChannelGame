@@ -58,6 +58,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Boss_Enrage" ID="{4AFF4292-AFB1-44AB-A59A-CF525070121F}">
+					<ChildrenList>
+						<Action Name="" ID="{243B5575-2292-4D1F-8EAF-79ADA05125D8}" ShortID="1040671100">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BossEnrage" ID="{3B4A1074-E2BB-4B0F-A27B-5F33AAF8E757}" WorkUnitID="{54E29680-853C-46B4-AAB7-78E8FFB87F64}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

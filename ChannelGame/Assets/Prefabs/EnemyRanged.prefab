@@ -520,6 +520,7 @@ MonoBehaviour:
   LargeModePositions:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   multiPositionArray: []
 --- !u!114 &4215430516854098844
 MonoBehaviour:

@@ -1451,6 +1451,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4891877564878512897, guid: d5dd50083b037e6498877e881372ba3b, type: 3}
+      propertyPath: triggerList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891877564878512897, guid: d5dd50083b037e6498877e881372ba3b, type: 3}
+      propertyPath: data.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: f69b166b4659f8e449ffa50a8ece8978, type: 2}
     - target: {fileID: 4891877565101251115, guid: d5dd50083b037e6498877e881372ba3b, type: 3}
       propertyPath: m_Size.x
       value: 4.5499997
@@ -1463,6 +1471,38 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4891877565101251153, guid: d5dd50083b037e6498877e881372ba3b, type: 3}
+      propertyPath: LargeModePositions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891877565101251159, guid: d5dd50083b037e6498877e881372ba3b, type: 3}
+      propertyPath: life
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891877565101251159, guid: d5dd50083b037e6498877e881372ba3b, type: 3}
+      propertyPath: _speed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891877565101251159, guid: d5dd50083b037e6498877e881372ba3b, type: 3}
+      propertyPath: EnrageSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891877565101251159, guid: d5dd50083b037e6498877e881372ba3b, type: 3}
+      propertyPath: AreaAttackTimer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891877565101251159, guid: d5dd50083b037e6498877e881372ba3b, type: 3}
+      propertyPath: _projectileDamage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891877565101251159, guid: d5dd50083b037e6498877e881372ba3b, type: 3}
+      propertyPath: _projectileLifetime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891877565101251159, guid: d5dd50083b037e6498877e881372ba3b, type: 3}
+      propertyPath: EnrageSound.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: f69b166b4659f8e449ffa50a8ece8978, type: 2}
     - target: {fileID: 4891877565101251165, guid: d5dd50083b037e6498877e881372ba3b, type: 3}
       propertyPath: m_Name
       value: EnemyBoss

@@ -7,12 +7,14 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="Shot_Lightsaber" ID="{1A3646D0-337F-4251-85B9-916EF0EF8EE8}" WorkUnitID="{2DDED858-1B63-41B8-80D9-8DE02DAE87A4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Shot_360Beat" ID="{DB9B79F1-6863-4270-9DF7-704A2D053F40}" WorkUnitID="{2DDED858-1B63-41B8-80D9-8DE02DAE87A4}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Boss_Enrage" ID="{4AFF4292-AFB1-44AB-A59A-CF525070121F}" WorkUnitID="{2DDED858-1B63-41B8-80D9-8DE02DAE87A4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Lightsaber1" ID="{45BA0513-1A47-4577-B8E5-3CED8F6BFC72}" WorkUnitID="{54E29680-853C-46B4-AAB7-78E8FFB87F64}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Lightsaber2" ID="{27E9388B-AFF5-460A-98B5-441FD8B6975B}" WorkUnitID="{54E29680-853C-46B4-AAB7-78E8FFB87F64}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Menu" ID="{A3770FA7-55BD-472E-87CE-8713A9B46EF6}" WorkUnitID="{4A233C72-361D-4044-878B-A02B41563EFE}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Lightsaber3" ID="{05B92F96-C222-478D-AABC-115622A1BA45}" WorkUnitID="{54E29680-853C-46B4-AAB7-78E8FFB87F64}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Menu" ID="{E3FFCE14-3860-479F-9F4D-00C19F42379D}" WorkUnitID="{4A233C72-361D-4044-878B-A02B41563EFE}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Enemy_Death" ID="{8753CC33-584F-47C2-8629-2198FCDF9332}" WorkUnitID="{2DDED858-1B63-41B8-80D9-8DE02DAE87A4}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="BossEnrage" ID="{3B4A1074-E2BB-4B0F-A27B-5F33AAF8E757}" WorkUnitID="{54E29680-853C-46B4-AAB7-78E8FFB87F64}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_XP_PickUp" ID="{93EC977A-3FFE-4B90-9916-A012EE59B374}" WorkUnitID="{2DDED858-1B63-41B8-80D9-8DE02DAE87A4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Shot_MachineGun" ID="{189D7753-5E18-4DDA-8918-89781F6B0AF3}" WorkUnitID="{2DDED858-1B63-41B8-80D9-8DE02DAE87A4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="LightSaber" ID="{E921F016-2ECD-4E6A-8B53-B27CC98F9259}" WorkUnitID="{54E29680-853C-46B4-AAB7-78E8FFB87F64}" Origin="Manual" Filter="7"/>

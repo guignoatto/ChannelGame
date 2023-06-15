@@ -5,7 +5,7 @@ public class EnemyProjectile : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
     private Transform _target;
-    private int _damage;
+    private int _damage ;
     private float _speed;
 
     public void Initialize(int damage, float speed, Transform target)
@@ -24,10 +24,17 @@ public class EnemyProjectile : MonoBehaviour
         _rigidbody2D.AddForce(direction * _speed);
     }
 
+    public void SetDamage(int value)
+    {
+        _damage = value;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.gameObject.TryGetComponent(out PlayerHealth player)) return;
         player.TakeDamage(_damage);
         Destroy(this.gameObject);
     }
+
+
 }

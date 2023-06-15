@@ -14,13 +14,13 @@ public class EnemyBase : MonoBehaviour, IEnemy
     [SerializeField] protected float _speed;
     
     [SerializeField] private GameObject experience, DeathParticle;
-    [SerializeField] private float life;
+    [SerializeField] protected float life;
     [SerializeField] private float _damage;
 
     protected PlayerMovement _target;
     protected Rigidbody2D _rbd;
     
-    private float maxLife;
+    protected float maxLife;
     private EnemyView _enemyView;
 
     public void TakeDamage(float damage)

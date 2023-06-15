@@ -13,6 +13,7 @@ public class EnemyRanged : EnemyBase
     [SerializeField] private int _projectileLifetime = 5;
     
     private float normalSpeed;
+    
 
     protected override void Start()
     {

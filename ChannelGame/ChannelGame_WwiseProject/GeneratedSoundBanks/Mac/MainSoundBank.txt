@@ -3,6 +3,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1205999388	Enemy_Death			\Default Work Unit\Enemy_Death	
 	1209502985	Shot_360Beat			\Default Work Unit\Shot_360Beat	
 	1598016745	Play_XP_PickUp			\Default Work Unit\Play_XP_PickUp	
+	2023348327	Boss_Enrage			\Default Work Unit\Boss_Enrage	
 	4020256367	Shot_Lightsaber			\Default Work Unit\Shot_Lightsaber	
 	4191302951	Shot_MachineGun			\Default Work Unit\Shot_MachineGun	
 
@@ -11,6 +12,7 @@ Effect plug-ins	ID	Name	Type				Notes
 	3354577677	Fast_LF_Tremolo	Wwise Tremolo			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	34080903	Powerup6	C:\Users\Rafael\ChannelGame\ChannelGame\ChannelGame_WwiseProject\.cache\Mac\SFX\Powerup6_D74B185F.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\SFX\BossEnrage\Powerup6		59500
 	136212208	MachineGun	C:\Users\Rafael\ChannelGame\ChannelGame\ChannelGame_WwiseProject\.cache\Mac\SFX\77245__studiocopsey__power-up_7E948A5A.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\SFX\MachineGun		7716
 	267298187	Lightsaber3	C:\Users\Rafael\ChannelGame\ChannelGame\ChannelGame_WwiseProject\.cache\Mac\SFX\Lightsaber2_C8F49079.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\SFX\LightSaber\Lightsaber3		73466
 	306663159	XP_PickUp	C:\Users\Rafael\ChannelGame\ChannelGame\ChannelGame_WwiseProject\.cache\Mac\SFX\77245__studiocopsey__power-up_3F121601.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\SFX\XP_PickUp		12922

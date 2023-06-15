@@ -526,6 +526,83 @@
 										</Sound>
 									</ChildrenList>
 								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="BossEnrage" ID="{3B4A1074-E2BB-4B0F-A27B-5F33AAF8E757}" ShortID="442731499">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-330</Value>
+											</ValueList>
+										</Property>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-10</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BD3573F6-C4E9-43D4-8D14-91B27BD72E6B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Powerup6" ID="{128E1D0D-DA28-4BF2-A16C-B5EDF232D40E}" ShortID="546230819">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BD3573F6-C4E9-43D4-8D14-91B27BD72E6B}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Powerup6" ID="{6D1F829C-9E48-45B0-8699-80D6D9523639}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.673514034283834"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.673514034283834"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Powerup6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="34080903"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Powerup6" ID="{6D1F829C-9E48-45B0-8699-80D6D9523639}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<Playlist>
+										<ItemRef Name="Powerup6" ID="{128E1D0D-DA28-4BF2-A16C-B5EDF232D40E}"/>
+									</Playlist>
+								</RandomSequenceContainer>
+								<Sound Name="CaixaPesada" ID="{5010D547-036B-470D-AF97-48423C4603B5}" ShortID="21881733">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BC5D9DF7-009C-4084-AF18-DE569A94FCB2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BD3573F6-C4E9-43D4-8D14-91B27BD72E6B}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="CaixaPesada" ID="{C1C20D2A-085C-4A6E-9ACC-39489B385D83}">
+											<Language>SFX</Language>
+											<AudioFile>CaixaPesada.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="29210843"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="CaixaPesada" ID="{C1C20D2A-085C-4A6E-9ACC-39489B385D83}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</ActorMixer>
 					</ChildrenList>
